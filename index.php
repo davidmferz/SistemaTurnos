@@ -1,4 +1,18 @@
 <?php
+	session_start();
+	if(!$_SESSION)
+	{
+		//Si tiene que estar aqui
+	}
+    else
+    {
+        switch ($_SESSION["user"]) 
+        {
+            case 0://Administrador
+                header('Location: index000.php');   
+            break;
+        }
+    }
 	
 ?>
 
@@ -82,7 +96,54 @@
 	</div>
 	<!-- BOOSTRAP Y JQUERY -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<!-- JQuery-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+	<!--VALIDAR EL LOGIN-->	
+	<script>
+    	  $("#miFormAltas").on("submit", function(e)//FUNCION AJAX PARA DAR DE ALTA UNA NUEVA OBRA
+    	  {
+             e.preventDefault();//evita que se recarge la pagina
+             var formData = new FormData(document.getElementById("miFormAltas"));
+           
+
+            $.ajax({
+                    url:"validar_login.php",
+                    type:"POST",
+                    dataType:"html",
+                    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                    data:formData,
+                    cache:false,
+                    contentType: false,
+                    encode:true,
+                    processData: false,
+                    beforeSend: function()
+                    {
+                        
+                    },
+                    success: function(datos)
+                    {
+                        if(datos=="1")
+                        {
+                        	location.reload();
+                        }
+                        else
+                        {
+                        	alert("Usuario y/o Contraseña incorrectos, intente de nuevo");
+                        }                           
+                    },
+                    error: function(XMLHttpRequest,data)
+                    {
+                      
+                    } 
+                });
+             
+          });
+    </script>
 </body>
 </html>
