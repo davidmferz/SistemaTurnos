@@ -22,7 +22,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Administrador</title>
+	<title>SistemaTurnos</title>
 	<!--BOOSTRAP-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -59,7 +59,7 @@
     <!--OPCIONES-->
     <div class="row mt-5">
     	<div class="col-md-6 text-center">
-    		<a href="#"><img src="img/mas.png" alt="imagen"></a>
+    		<a href="nuevoTurno.php"><img src="img/mas.png" alt="imagen"></a>
     		<h5>Agregar un turno</h5>
     	</div>
     	<div class="col-md-6 text-center">
