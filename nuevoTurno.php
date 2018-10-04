@@ -28,6 +28,7 @@
 
     <!--CSS-->
     <script src="css/estilos.css"></script>
+
 </head>
 <body>
 
@@ -62,6 +63,7 @@
           <div class="card-header text-center">
             Agregar un nuevo Turno
           </div>
+          
           <div class="card-body">
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Tipos de Turnos</label>
@@ -108,7 +110,13 @@
 
             </div><!--CARD BODY TERMINA-->
         </div><!--CARD TERMINA-->
+
+
     </div><!--CONTAINER TERMINA-->
+
+
+    
+
     <!-- BOOSTRAP Y JQUERY -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
