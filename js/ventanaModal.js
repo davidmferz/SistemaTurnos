@@ -14,7 +14,8 @@ const Ventana = props =>{
 		      	<br/>
 		        <form id={"form-"+props.id}>
 					<div className="form-group">
-						<input type="text" className="form-control" id="nombre" placeholder="Ingrese Nombre"/>
+						<input type="text" className="form-control" id="nombre" 
+						 name="nombre" placeholder="Ingrese Nombre"/>
 					</div>
 				</form>
 		      </div>
@@ -37,10 +38,10 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurno" titulo="Tipo de Turno" titulo2="como estas" funcion="Enviar" />
-		<Ventana id="vtnRemite" titulo="Area que Remite" titulo2="como estas" funcion="Enviar" />
-		<Ventana id="vtnBeneficia" titulo="Area que Beneficia" titulo2="como estas" funcion="Enviar" />
-		<Ventana id="vtnAtencion" titulo="Departamento Responsable de Atención" titulo2="como estas" funcion="Enviar" />
+		<Ventana id="vtnTurno" titulo="Tipo de Turno"  funcion="enviarTurno"/>
+		<Ventana id="vtnRemite" titulo="Area que Remite"  funcion="enviarRemite"/>
+		<Ventana id="vtnBeneficia" titulo="Area que Beneficia"  funcion="enviarBeneficia"/>
+		<Ventana id="vtnAtencion" titulo="Departamento Responsable de Atención" funcion="enviarAtencion"/>
 	</div>, 
 	document.getElementById('ventana')
 );

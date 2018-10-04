@@ -38,7 +38,8 @@ var Ventana = function Ventana(props) {
 						React.createElement(
 							"div",
 							{ className: "form-group" },
-							React.createElement("input", { type: "text", className: "form-control", id: "nombre", placeholder: "Ingrese Nombre" })
+							React.createElement("input", { type: "text", className: "form-control", id: "nombre",
+								name: "nombre", placeholder: "Ingrese Nombre" })
 						)
 					)
 				),
@@ -71,8 +72,8 @@ var Ventana = function Ventana(props) {
 ReactDOM.render(React.createElement(
 	"div",
 	null,
-	React.createElement(Ventana, { id: "vtnTurno", titulo: "Tipo de Turno", titulo2: "como estas", funcion: "Enviar" }),
-	React.createElement(Ventana, { id: "vtnRemite", titulo: "Area que Remite", titulo2: "como estas", funcion: "Enviar" }),
-	React.createElement(Ventana, { id: "vtnBeneficia", titulo: "Area que Beneficia", titulo2: "como estas", funcion: "Enviar" }),
-	React.createElement(Ventana, { id: "vtnAtencion", titulo: "Departamento Responsable de Atenci\xF3n", titulo2: "como estas", funcion: "Enviar" })
+	React.createElement(Ventana, { id: "vtnTurno", titulo: "Tipo de Turno", funcion: "enviarTurno" }),
+	React.createElement(Ventana, { id: "vtnRemite", titulo: "Area que Remite", funcion: "enviarRemite" }),
+	React.createElement(Ventana, { id: "vtnBeneficia", titulo: "Area que Beneficia", funcion: "enviarBeneficia" }),
+	React.createElement(Ventana, { id: "vtnAtencion", titulo: "Departamento Responsable de Atenci\xF3n", funcion: "enviarAtencion" })
 ), document.getElementById('ventana'));
