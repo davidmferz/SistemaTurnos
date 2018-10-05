@@ -86,6 +86,10 @@
         
     </div>
     
+    <div id="ventanaEditar">
+        
+    </div>
+
 
     <div class="container-fluid mt-5">
         <div class="row">
@@ -125,25 +129,41 @@
         <tr>
           <th scope="row">Tipo de Turno</th>
           <td>Mark</td>
-          <td>Otto</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnoEditar">
+              <img src="img/editar.png" alt="Imagen">
+            </button>
+          </td>
           <td>@mdo</td>
         </tr>
         <tr>
           <th scope="row">Area que Remite</th>
           <td>Jacob</td>
-          <td>Thornton</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEditar">
+              <img src="img/editar.png" alt="Imagen">
+            </button>
+          </td>
           <td>@fat</td>
         </tr>
         <tr>
           <th scope="row">Area que Beneficia</th>
           <td>Larry</td>
-          <td>the Bird</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEditar">
+              <img src="img/editar.png" alt="Imagen">
+            </button>
+          </td>
           <td>@twitter</td>
         </tr>
         <tr>
           <th scope="row">Departamento Responsable de Atención</th>
           <td>Larry</td>
-          <td>the Bird</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEditar">
+              <img src="img/editar.png" alt="Imagen">
+            </button>
+          </td>
           <td>@twitter</td>
         </tr>
       </tbody>
@@ -154,6 +174,7 @@
 
     <!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
+    <script src="js/ventanaModalEditar-dist.js"></script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
