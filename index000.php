@@ -115,7 +115,15 @@
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@mdo</td>
+
+
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnor">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+         
+
         </tr>
         <tr>
           <th scope="row">Area que Remite</th>
@@ -129,7 +137,12 @@
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@fat</td>
+           <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiter">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+
         </tr>
         <tr>
           <th scope="row">Area que Beneficia</th>
@@ -143,7 +156,13 @@
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@twitter</td>
+
+            <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+
         </tr>
         <tr>
           <th scope="row">Departamento Responsable de Atención</th>
@@ -157,7 +176,14 @@
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@twitter</td>
+          <!--elim-->
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+
+
         </tr>
       </tbody>
     </table>
