@@ -33,6 +33,7 @@
     <!--INSTALACION DE REACT -->
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="js/nuevoTurno.js"></script>
     
 </head>
 <body>
@@ -194,6 +195,7 @@
     <!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/altaVentanaModal.js"></script>
+
     <script src="js/ventanaModalEditar-dist.js"></script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

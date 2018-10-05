@@ -20,7 +20,7 @@ const Ventana = props =>{
 				</form>
 		      </div>
 		      <div className="modal-footer">
-		        <button type="button" className="btn btn-primary" onClick="enviarTurno()">Guardar</button>
+		        <button type="button" className="btn btn-primary" onclick="nuevoTurno()">Guardar</button>
 		        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
@@ -38,7 +38,7 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurno" titulo="Tipo de Recurso"  funcion="enviarTurno()"/>
+		<Ventana id="vtnTurno" titulo="Tipo de Recurso"  funcion="nuevoTurno()"/>
 		<Ventana id="vtnRemite" titulo="Area que Remite"  funcion="enviarRemite()"/>
 		<Ventana id="vtnBeneficia" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
 		<Ventana id="vtnAtencion" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
