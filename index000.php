@@ -91,30 +91,7 @@
     </div>
 
 
-    <div class="container-fluid mt-5">
-        <div class="row">
-            <div class="col-md-3">
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
-                    Tipo de Turno
-                </button>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite">
-                    Area que Remite
-                </button>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia">
-                    Area que Beneficia
-                </button>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion">
-                    Departamento Responsable de Atención
-                </button>
-            </div>
-        </div>
-    </div>
+    
 
     <table class="table">
       <thead>
@@ -128,7 +105,11 @@
       <tbody>
         <tr>
           <th scope="row">Tipo de Turno</th>
-          <td>Mark</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
+              <img src="img/agregar.png" alt="Imagen">
+            </button>
+          </td>
           <td>
             <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnoEditar">
               <img src="img/editar.png" alt="Imagen">
@@ -138,7 +119,11 @@
         </tr>
         <tr>
           <th scope="row">Area que Remite</th>
-          <td>Jacob</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite">
+              <img src="img/agregar.png" alt="Imagen">
+            </button>
+          </td>
           <td>
             <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEditar">
               <img src="img/editar.png" alt="Imagen">
@@ -148,7 +133,11 @@
         </tr>
         <tr>
           <th scope="row">Area que Beneficia</th>
-          <td>Larry</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia">
+                <img src="img/agregar.png" alt="Imagen">
+            </button>
+          </td>
           <td>
             <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEditar">
               <img src="img/editar.png" alt="Imagen">
@@ -158,7 +147,11 @@
         </tr>
         <tr>
           <th scope="row">Departamento Responsable de Atención</th>
-          <td>Larry</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion">
+                <img src="img/agregar.png" alt="Imagen">
+            </button>
+          </td>
           <td>
             <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEditar">
               <img src="img/editar.png" alt="Imagen">
