@@ -111,14 +111,14 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','turno')" data-toggle="modal" data-target="#vtnTurnoEditar">
+            <button type="button" class="btn btn-link" onclick="consultar(1)" data-toggle="modal" data-target="#vtnTurnoEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
 
 
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnor">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -133,12 +133,12 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEditar">
+            <button type="button" class="btn btn-link" onclick="consultar(2)" data-toggle="modal" data-target="#vtnRemiteEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
            <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiter">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -152,7 +152,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEditar">
+            <button type="button" class="btn btn-link" onclick="consultar(3)" data-toggle="modal" data-target="#vtnBeneficiaEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -172,7 +172,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEditar">
+            <button type="button" class="btn btn-link" onclick="consultar(4)" data-toggle="modal" data-target="#vtnAtencionEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -201,6 +201,25 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <script>
+
+  function consultar(idC)
+    {
+        $.ajax({
+            url: 'consulta.php',
+            type: 'POST',
+            dataType: 'html',
+            data: {idC: idC},
+        })
+        .done(function(respuesta) 
+        {
+            consulta_Select();
+        })
+        .fail(function() 
+        {
+            console.log("error");
+        });
+  }
+
   function consulta_Select(tabla, select)
     {
             $.ajax({
