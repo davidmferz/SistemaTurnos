@@ -193,6 +193,7 @@
 
     <!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
+    <script src="js/altaVentanaModal.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
