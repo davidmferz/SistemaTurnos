@@ -132,7 +132,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consultar(2)" data-toggle="modal" data-target="#vtnRemiteEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('arearemite','select-vtnRemiteEditar')" data-toggle="modal" data-target="#vtnRemiteEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -151,7 +151,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consultar(3)" data-toggle="modal" data-target="#vtnBeneficiaEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('areabeneficiada','select-vtnBeneficiaEditar')" data-toggle="modal" data-target="#vtnBeneficiaEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -171,7 +171,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consultar(4)" data-toggle="modal" data-target="#vtnAtencionEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('responsableatencion','select-vtnAtencionEditar')" data-toggle="modal" data-target="#vtnAtencionEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
