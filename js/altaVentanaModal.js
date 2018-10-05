@@ -131,3 +131,28 @@ function enviarAtencion(e)
 		console.log("complete");
 	});
 }
+
+function editarTurno(e)
+{
+	e.preventDefault();//evita que se recarge la pagina
+	var formData = new FormData(document.getElementById("form-vtnTurnoEditar"));
+
+	$.$.ajax({
+		url: 'enviarTurno.php',
+		type: 'POST',
+		dataType: 'json',
+		data: formData,
+	})
+	.done(function() {
+		/* Se hizo bien 
+		   LIMPIAMOS LOS DATOS DEL FORMULARIO
+		 */ 
+        document.getElementById("form-vtnTurnoEditar").reset();
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
+}
