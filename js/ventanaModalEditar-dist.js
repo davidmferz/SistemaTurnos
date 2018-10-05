@@ -40,7 +40,7 @@ var Ventana = function Ventana(props) {
 							{ className: "form-group" },
 							React.createElement(
 								"select",
-								{ className: "form-control grupos", id: "turno", name: "turno" },
+								{ className: "form-control grupos", id: "select-" + props.id, name: "nombre" },
 								React.createElement(
 									"option",
 									{ value: "0" },

@@ -14,7 +14,7 @@ const Ventana = props =>{
 		      	<br/>
 		        <form id={"form-"+props.id}>
 					<div className="form-group">
-						<select className="form-control grupos" id="turno" name="turno">
+						<select className="form-control grupos" id={"select-"+props.id} name="nombre">
 						 <option value="0">Seleccione una opcion</option>
 						 </select>
 					</div>

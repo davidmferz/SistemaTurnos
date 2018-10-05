@@ -111,12 +111,10 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consultar(1)" data-toggle="modal" data-target="#vtnTurnoEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','select-vtnTurnoEditar')" data-toggle="modal" data-target="#vtnTurnoEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-
-
           <td>
             <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
               <img src="img/eliminar_32.png" alt="Imagen">
@@ -189,36 +187,8 @@
     </table>
 
     </div><!--Aqui termina el container-->
-    
-
-    <!-- VENTANA MODAL ENLACE -->
-    <script src="js/ventanaModal-dist.js"></script>
-    <script src="js/ventanaModalEditar-dist.js"></script>
-    
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <script>
-
-  function consultar(idC)
-    {
-        $.ajax({
-            url: 'consulta.php',
-            type: 'POST',
-            dataType: 'html',
-            data: {idC: idC},
-        })
-        .done(function(respuesta) 
-        {
-            consulta_Select();
-        })
-        .fail(function() 
-        {
-            console.log("error");
-        });
-  }
 
   function consulta_Select(tabla, select)
     {
@@ -250,5 +220,15 @@
             });
     }
 </script>
+
+<!-- VENTANA MODAL ENLACE -->
+    <script src="js/ventanaModal-dist.js"></script>
+    <script src="js/ventanaModalEditar-dist.js"></script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
 </body>
 </html>
