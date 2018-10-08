@@ -48,9 +48,7 @@ var Ventana = function Ventana(props) {
 								)
 							)
 						)
-					),
-					React.createElement("br", null),
-					React.createElement("input", { type: "text", className: "form-control", name: "nombre", id: "otro1" })
+					)
 				),
 				React.createElement(
 					"div",
@@ -58,7 +56,8 @@ var Ventana = function Ventana(props) {
 					React.createElement(
 						"button",
 						{ type: "button", className: "btn btn-primary", onClick: props.funcion },
-						"Editar"
+						"Eliminar"
+						//AQUI PARA CAMBIAR EL NOMBRE DEL BOTÓN QUE APARECE EN LA VENTANA MODAL
 					),
 					React.createElement(
 						"button",
@@ -81,8 +80,8 @@ var Ventana = function Ventana(props) {
 ReactDOM.render(React.createElement(
 	"div",
 	null,
-	React.createElement(Ventana, { id: "vtnTurnoEditar", titulo: "Tipo de Turno", funcion: "editarTurno()" }),
-	React.createElement(Ventana, { id: "vtnRemiteEditar", titulo: "Area que Remite", funcion: "enviarRemite()" }),
-	React.createElement(Ventana, { id: "vtnBeneficiaEditar", titulo: "Area que Beneficia", funcion: "enviarBeneficia()" }),
-	React.createElement(Ventana, { id: "vtnAtencionEditar", titulo: "Departamento Responsable de Atenci\xF3n", funcion: "enviarAtencion()" })
-), document.getElementById('ventanaEditar'));
+	React.createElement(Ventana, { id: "vtnTurnoEliminar", titulo: "Eliminar Tipo de Turno", funcion: "eliminarTurno()" }),
+	React.createElement(Ventana, { id: "vtnRemiteEliminar", titulo: "Eliminar Area que Remite", funcion: "enviarRemite()" }),
+	React.createElement(Ventana, { id: "vtnBeneficiaEliminar", titulo: "Eliminar Area que Beneficia", funcion: "enviarBeneficia()" }),
+	React.createElement(Ventana, { id: "vtnAtencionEliminar", titulo: "Eliminar vvDepartamento Responsable de Atenci\xF3n", funcion: "enviarAtencion()" })
+), document.getElementById('ventanaEliminar'));

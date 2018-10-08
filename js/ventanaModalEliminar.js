@@ -19,11 +19,9 @@ const Ventana = props =>{
 						 </select>
 					</div>
 				</form>
-				<br/>
-				<input type="text" className="form-control" name="nombre" id="otro1"/>
 		      </div>
 		      <div className="modal-footer">
-		        <button type="button" className="btn btn-primary" onClick={props.funcion}>Editar</button>
+		        <button type="button" className="btn btn-primary" onClick={props.funcion}>Eliminar</button>
 		        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
@@ -41,10 +39,10 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurnoEditar" titulo="Tipo de Turno"  funcion="editarTurno()"/>
-		<Ventana id="vtnRemiteEditar" titulo="Area que Remite"  funcion="enviarRemite()"/>
-		<Ventana id="vtnBeneficiaEditar" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
-		<Ventana id="vtnAtencionEditar" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
+		<Ventana id="vtnTurnoEliminar"titulo="Tipo de Turno"  funcion="editarTurno()"/>
+		<Ventana id="vtnRemiteEliminar titulo="Area que Remite"  funcion="enviarRemite()"/>
+		<Ventana id="vtnBeneficiaElimiar" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
+		<Ventana id="vtnAtencionEliminar" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
 	</div>, 
-	document.getElementById('ventanaEditar')
+	document.getElementById('ventanaEliminar')
 );

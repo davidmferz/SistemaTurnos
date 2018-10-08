@@ -91,7 +91,9 @@
         
     </div>
 
-
+    <div id="ventanaEliminar">
+        
+    </div>
     
 
     <table class="table">
@@ -117,7 +119,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnoEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -136,8 +138,9 @@
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
+
            <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -157,7 +160,7 @@
           </td>
 
             <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -177,7 +180,7 @@
           </td>
           <!--elim-->
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -221,11 +224,51 @@
                 }
             });
     }
+
+    function cargar(id, valor)
+    {
+      var boton = document.getElementById("btnRecursos");
+        boton.innerHTML=`
+            <div style="color:#fff; padding-bottom: 0.4em;">-</div>
+            <button type="button" id="btnAgregar" class="btn btn-success media-middle" data-toggle="modal"  onclick="cargarRecursos('${id}','${valor}')" data-target="#VentanaModal">Editar
+            </button>
+        `;
+    }
+
+    function cargarRecursos(id, valor) //VENTANA MODAL PARA TIPO DE RECURSO
+        {
+            //Cargar Tipo de recurso
+            //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
+            var nuevo = document.getElementById("otro1").value;
+            document.getElementById("modalImagen").innerHTML=`<img src="imagenes/Informacion-128.png" alt="Imagen no econtrada">`; 
+            if(!(nuevo.trim() == ""))
+            {
+                document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
+                document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar el tipo de recurso <b>"+valor+"</b> a <b>"+nuevo+"</b>,? si continua se actualizara automaticamente el nuevo valor para todas las obras registradas con el tipo de recurso <b>"+valor+"</b> ahora va ser <b>"+nuevo+"</b>";
+
+                
+                document.getElementById("modalBotones").innerHTML=`
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancelarRecursos()">NO, Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" 
+                        onclick="editarRecrusos2('${id}','${nuevo}')">Si, Cambiar
+                    </button>
+                `;
+            }
+            else
+            {
+                document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
+                document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
+            }
+        }
+
+
 </script>
 
 <!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
+    <script src="js/ventanaModalEliminar-dist.js"></script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
