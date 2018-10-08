@@ -19,6 +19,8 @@ const Ventana = props =>{
 						 </select>
 					</div>
 				</form>
+				<br/>
+				<input type="text" className="form-control" name="nombre" id="otro1"/>
 		      </div>
 		      <div className="modal-footer">
 		        <button type="button" className="btn btn-primary" onClick={props.funcion}>Editar</button>

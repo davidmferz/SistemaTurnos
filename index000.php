@@ -222,6 +222,45 @@
                 }
             });
     }
+
+    function cargar(id, valor)
+    {
+      var boton = document.getElementById("btnRecursos");
+        boton.innerHTML=`
+            <div style="color:#fff; padding-bottom: 0.4em;">-</div>
+            <button type="button" id="btnAgregar" class="btn btn-success media-middle" data-toggle="modal"  onclick="cargarRecursos('${id}','${valor}')" data-target="#VentanaModal">Editar
+            </button>
+        `;
+    }
+
+    function cargarRecursos(id, valor) //VENTANA MODAL PARA TIPO DE RECURSO
+        {
+            //Cargar Tipo de recurso
+            //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
+            var nuevo = document.getElementById("otro1").value;
+            document.getElementById("modalImagen").innerHTML=`<img src="imagenes/Informacion-128.png" alt="Imagen no econtrada">`; 
+            if(!(nuevo.trim() == ""))
+            {
+                document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
+                document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar el tipo de recurso <b>"+valor+"</b> a <b>"+nuevo+"</b>,? si continua se actualizara automaticamente el nuevo valor para todas las obras registradas con el tipo de recurso <b>"+valor+"</b> ahora va ser <b>"+nuevo+"</b>";
+
+                
+                document.getElementById("modalBotones").innerHTML=`
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancelarRecursos()">NO, Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" 
+                        onclick="editarRecrusos2('${id}','${nuevo}')">Si, Cambiar
+                    </button>
+                `;
+            }
+            else
+            {
+                document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
+                document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
+            }
+        }
+
+
 </script>
 
 <!-- VENTANA MODAL ENLACE -->

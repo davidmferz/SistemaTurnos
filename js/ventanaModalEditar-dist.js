@@ -48,7 +48,9 @@ var Ventana = function Ventana(props) {
 								)
 							)
 						)
-					)
+					),
+					React.createElement("br", null),
+					React.createElement("input", { type: "text", className: "form-control", name: "nombre", id: "otro1" })
 				),
 				React.createElement(
 					"div",
