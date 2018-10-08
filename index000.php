@@ -90,7 +90,9 @@
         
     </div>
 
-
+    <div id="ventanaEliminar">
+        
+    </div>
     
 
     <table class="table">
@@ -116,7 +118,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnoEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -135,8 +137,9 @@
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
+
            <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -156,7 +159,7 @@
           </td>
 
             <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -176,7 +179,7 @@
           </td>
           <!--elim-->
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -224,6 +227,7 @@
 <!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
+    <script src="js/ventanaModalEliminar-dist.js"></script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
