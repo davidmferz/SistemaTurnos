@@ -213,7 +213,7 @@
                     t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
                     for (i in datos) 
                     {
-                        t_re.innerHTML +=`<option value='${datos[i].id}' onclick='cargar('${datos[i].id}', '${datos[i].name}');'>${datos[i].name}</option>`;
+                        t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
                     }
                 },
                 error: function(XMLHttpRequest)
@@ -223,19 +223,15 @@
             });
     }
 
-    function cargar(id, valor)
+    function cargar()
     {
-      console.log("hola");
-      var res=document.getElementById("select-vtnTurnoEditar").value;
-      document.getElementById("otro1").innerHTML=res;
-      var original=document.getElementById("otro1");//Tipo de recurso ORIGINAL
-      original.value=valor;
+    var dato = document.getElementById("select-vtnTurnoEditar").value;
+    document.getElementById("otro1").value = dato;
 
-      var boton = document.getElementById("editar");
-        boton.innerHTML=`
+        /*boton.innerHTML=`
             <button type="button" id="btnAgregar" class="btn btn-primary" data-toggle="modal"  onclick="cargarRecursos('${id}','${valor}')" data-target="#VentanaModal">Editar
             </button>
-        `;
+        `;*/
     }
 
     function cargarRecursos(id, valor) //VENTANA MODAL PARA TIPO DE RECURSO

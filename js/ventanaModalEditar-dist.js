@@ -40,7 +40,7 @@ var Ventana = function Ventana(props) {
 							{ className: "form-group" },
 							React.createElement(
 								"select",
-								{ className: "form-control grupos", id: "select-" + props.id, name: "nombre" },
+								{ className: "form-control grupos", id: "select-" + props.id, onChange: cargar, name: "nombre" },
 								React.createElement(
 									"option",
 									{ value: "0" },
@@ -57,7 +57,7 @@ var Ventana = function Ventana(props) {
 					{ className: "modal-footer" },
 					React.createElement(
 						"button",
-						{ type: "button", id: "editar", className: "btn btn-primary", onClick: props.funcion },
+						{ type: "button", id: "editar", className: "btn btn-primary", onClick: cargar },
 						"Editar"
 					),
 					React.createElement(
