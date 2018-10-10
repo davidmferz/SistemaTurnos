@@ -14,25 +14,21 @@ const Ventana = props =>{
 		      	<br/>
 		        <form id={"form-"+props.id}>
 					<div className="form-group">
-						<select className="form-control grupos" id={"select-"+props.id} onChange={cargar} name="nombre">
+						<select className="form-control grupos" id={"select-"+props.id} name="nombre">
 						 <option value="0">Seleccione una opcion</option>
 						 </select>
 					</div>
 				</form>
-				<br/>
-				<input type="text" className="form-control" name="nombre" id="otro1"/>
 		      </div>
 		      <div className="modal-footer">
-		        <button type="button" id="editar" className="btn btn-primary" onClick={cargar}>Editar</button>
+		        <button type="button" className="btn btn-primary" onClick={props.funcion}>Eliminar</button>
 		        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
 	)
-
 };
-
 
 /* 	Aqui se crean las 4 ventanas Modales para
 	-Tipo de Turno
@@ -43,10 +39,10 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurnoEditar" titulo="Tipo de Turno"  funcion="editarTurno()"/>
-		<Ventana id="vtnRemiteEditar" titulo="Area que Remite"  funcion="enviarRemite()"/>
-		<Ventana id="vtnBeneficiaEditar" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
-		<Ventana id="vtnAtencionEditar" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
+		<Ventana id="vtnTurnoEliminar"titulo="Tipo de Turno"  funcion="editarTurno()"/>
+		<Ventana id="vtnRemiteEliminar titulo="Area que Remite"  funcion="enviarRemite()"/>
+		<Ventana id="vtnBeneficiaElimiar" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
+		<Ventana id="vtnAtencionEliminar" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
 	</div>, 
-	document.getElementById('ventanaEditar')
+	document.getElementById('ventanaEliminar')
 );

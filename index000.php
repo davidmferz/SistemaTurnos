@@ -92,7 +92,9 @@
         
     </div>
 
-
+    <div id="ventanaEliminar">
+        
+    </div>
     
 
     <table class="table">
@@ -113,11 +115,17 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnoEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','select-vtnTurnoEditar')" data-toggle="modal" data-target="#vtnTurnoEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@mdo</td>
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnoEliminar">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+         
+
         </tr>
         <tr>
           <th scope="row">Area que Remite</th>
@@ -127,11 +135,17 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('arearemite','select-vtnRemiteEditar')" data-toggle="modal" data-target="#vtnRemiteEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@fat</td>
+
+           <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEliminar">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+
         </tr>
         <tr>
           <th scope="row">Area que Beneficia</th>
@@ -141,11 +155,17 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('areabeneficiada','select-vtnBeneficiaEditar')" data-toggle="modal" data-target="#vtnBeneficiaEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@twitter</td>
+
+            <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEliminar">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+
         </tr>
         <tr>
           <th scope="row">Departamento Responsable de Atención</th>
@@ -155,26 +175,110 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('responsableatencion','select-vtnAtencionEditar')" data-toggle="modal" data-target="#vtnAtencionEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
-          <td>@twitter</td>
+          <!--elim-->
+          <td>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEliminar">
+              <img src="img/eliminar_32.png" alt="Imagen">
+            </button>
+          </td>
+
+
         </tr>
       </tbody>
     </table>
 
     </div><!--Aqui termina el container-->
-    
 
-    <!-- VENTANA MODAL ENLACE -->
+<script>
+
+  function consulta_Select(tabla, select)
+    {
+            $.ajax({
+                url:"consulta_Select.php?tabla="+tabla,
+                type:"GET",
+                dataType:"json",
+                cache:false,
+                contentType: false,
+                encode:true,
+                processData: false,
+                beforeSend: function()
+                {
+                     
+                },
+                success: function(datos)
+                {
+                    var t_re=document.getElementById(select);
+                    t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
+                    for (i in datos) 
+                    {
+                        t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
+                    }
+                },
+                error: function(XMLHttpRequest)
+                {
+                   console.log("error"+XMLHttpRequest); 
+                }
+            });
+    }
+
+    function cargar()
+    {
+    var dato = document.getElementById("select-vtnTurnoEditar").value;
+    document.getElementById("otro1").value = dato;
+
+        /*boton.innerHTML=`
+            <button type="button" id="btnAgregar" class="btn btn-primary" data-toggle="modal"  onclick="cargarRecursos('${id}','${valor}')" data-target="#VentanaModal">Editar
+            </button>
+        `;*/
+    }
+
+    function cargarRecursos(id, valor) //VENTANA MODAL PARA TIPO DE RECURSO
+        {
+            //Cargar Tipo de recurso
+            //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
+            var nuevo = document.getElementById("otro1").value;
+            document.getElementById("modalImagen").innerHTML=`<img src="imagenes/Informacion-128.png" alt="Imagen no econtrada">`; 
+            if(!(nuevo.trim() == ""))
+            {
+                document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
+                document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar el tipo de recurso <b>"+valor+"</b> a <b>"+nuevo+"</b>,? si continua se actualizara automaticamente el nuevo valor para todas las obras registradas con el tipo de recurso <b>"+valor+"</b> ahora va ser <b>"+nuevo+"</b>";
+
+                
+                document.getElementById("modalBotones").innerHTML=`
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancelarRecursos()">NO, Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" 
+                        onclick="editarRecrusos2('${id}','${nuevo}')">Si, Cambiar
+                    </button>
+                `;
+            }
+            else
+            {
+                document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
+                document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
+            }
+        }
+
+
+</script>
+
+<!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
+
    
+
+    <script src="js/ventanaModalEliminar-dist.js"></script>
+
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
 </body>
 </html>
