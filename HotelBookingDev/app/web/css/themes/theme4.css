@@ -1,0 +1,99 @@
+/* ==========================================================================
+	#General
+========================================================================== */
+#pjWrapper .pjHbContainer a { color: #d66e3b; }
+#pjWrapper .pjHbContainer a:hover { color: #bd5726; }
+
+/* ==========================================================================
+	#pjHbPanel
+========================================================================== */
+#pjWrapper .pjHbPanel .pjHbPanelHead { border-bottom: 0; background: #f9f8f3; }
+#pjWrapper .pjHbPanel .pjHbPanelBody { background: #f9f8f3; }
+
+/* ==========================================================================
+	#Buttons
+========================================================================== */
+#pjWrapper .pjHbContainer .btn-default { border-color: #bd5726; background: #d66e3b; color: #fff; text-transform: uppercase; }
+#pjWrapper .pjHbContainer .btn-default:hover { border-color: #bd5726; background: #bd5726; color: #fff; }
+
+#pjWrapper .pjHbContainer .pjHbBtnHome,
+#pjWrapper .pjHbContainer .pjHbBtnNav { border: 0; background: #fff; color: #d66e3b; -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .1); box-shadow: 0 2px 3px rgba(0, 0, 0, .1); }
+#pjWrapper .pjHbContainer .pjHbBtnHome:hover,
+#pjWrapper .pjHbContainer .pjHbBtnNav:hover { border: 0; background: #fff; color: #bd5726; -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .2); box-shadow: 0 2px 3px rgba(0, 0, 0, .2); }
+
+#pjWrapper .pjHbContainer .pjHbNav .pjHbBtnPassed { color: #d66e3b; }
+#pjWrapper .pjHbContainer .pjHbNav .pjHbBtnActive { background: #d66e3b; color: #fff; }
+
+#pjWrapper .pjHbContainer .pjHbLanguage ul li a:hover,
+#pjWrapper .pjHbContainer .pjHbLanguage ul li a:focus,
+#pjWrapper .pjHbContainer .pjHbLanguage .pjHbBtnActive { background: #d66e3b; color: #fff; }
+
+/* ==========================================================================
+	#pjHbPanelBody
+========================================================================== */
+#pjWrapper .pjHbPanelTitle { color: #5a3f34; text-transform: uppercase; text-align: center; }
+
+/* ==========================================================================
+	#pjHbFormCheck
+========================================================================== */
+#pjWrapper .pjHbFormCheck label { color: #4d4e50; }
+#pjWrapper .pjHbCalendar .input-group-addon,
+#pjWrapper .pjHbTimePick .input-group-addon { color: #d66e3b; }
+#pjWrapper .pjHbCalendar .input-group-addon:hover,
+#pjWrapper .pjHbTimePick .input-group-addon:hover { color: #bd5726; }
+
+/* ==========================================================================
+	#pjHbProduct
+========================================================================== */
+#pjWrapper .pjHbProduct .panel-heading { background: #fff; color: #d66e3b; text-transform: uppercase; }
+#pjWrapper .pjHbProduct .panel-body { color: #4d4e50; }
+#pjWrapper .pjHbProduct .input-group-addon { color: #d66e3b; }
+#pjWrapper .pjHbProductPrice { color: #d66e3b; font-weight: bold; }
+
+/* ==========================================================================
+	#pjHbPanelBooking
+========================================================================== */
+#pjWrapper .pjHbPanelBooking a { color: #d66e3b; }
+#pjWrapper .pjHbPanelBookingTitle { color: #d66e3b; }
+#pjWrapper .pjHbPanelBooking { color: #4d4e50; }
+#pjWrapper .pjHbPanelBooking .pjHbPanelBookingMeta,
+#pjWrapper .pjHbPanelBooking strong { color: #5a3f34; }
+
+/* ==========================================================================
+	#pjHbExtras
+========================================================================== */
+#pjWrapper .pjHbExtras p,
+#pjWrapper .pjHbExtras .table-responsive { color: #4d4e50; }
+#pjWrapper .pjHbExtrasTitle { color: #d66e3b; }
+#pjWrapper .pjHbExtraPrice { color: #5a3f34; }
+
+/* ==========================================================================
+	#pjHbFormCheckOut
+========================================================================== */
+#pjWrapper .pjHbFormCheckOutTitle { color: #d66e3b; text-transform: uppercase; text-align: center; }
+#pjWrapper .pjHbFormCheckOut .control-label { color: #5a3f34; }
+#pjWrapper .pjHbTimePicker .input-group-addon { color: #d66e3b; cursor: pointer; }
+
+/* ==========================================================================
+	#pjHbPanelBodyLast
+========================================================================== */
+#pjWrapper .pjHbPanelBodyLast { color: #4d4e50; }
+
+/* ==========================================================================
+	#RTL
+========================================================================== */
+[dir="rtl"] #pjWrapper .pjHbCalendar .input-group-addon,
+[dir="rtl"] #pjWrapper .pjHbTimePick .input-group-addon { border-left-color: #ccc; }
+[dir="rtl"] #pjWrapper .pjHbCalendar.has-success .input-group-addon,
+[dir="rtl"] #pjWrapper .has-success .pjHbTimePick .input-group-addon { border-left-color: #3c763d; }
+[dir="rtl"] #pjWrapper .pjHbCalendar.has-error .input-group-addon,
+[dir="rtl"] #pjWrapper .has-error .pjHbTimePick .input-group-addon { border-left-color: #a94442; }
+
+[dir="rtl"] #pjWrapper .pjHbProduct .input-group .input-group-addon { border-right-color: #ccc; }
+[dir="rtl"] #pjWrapper .pjHbProduct .has-success .input-group .input-group-addon { border-right-color: #3c763d; }
+[dir="rtl"] #pjWrapper .pjHbProduct .has-error .input-group .input-group-addon { border-right-color: #a94442; }
+
+#pjWrapper .bootstrap-datetimepicker-widget .datepicker table td span:hover,
+#pjWrapper .datepicker .active { background: #d66e3b; }
+
+#pjWrapper .bootstrap-datetimepicker-widget table td.today:before { border-bottom-color: #d66e3b; }

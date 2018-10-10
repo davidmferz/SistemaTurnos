@@ -1,0 +1,124 @@
+/* ==========================================================================
+	#pjHbPanel
+========================================================================== */
+#pjWrapper .pjHbPanel .pjHbPanelHead { background: #3d3938; }
+#pjWrapper .pjHbPanel .pjHbPanelBody { background: #f3f1f2; }
+
+/* ==========================================================================
+	#Buttons
+========================================================================== */
+#pjWrapper .pjHbContainer .btn-default { border-color: #d0391c; color: #fff; 
+	background: rgb(243,76,42);
+	background: -moz-linear-gradient(top,  rgba(243,76,42,1) 0%, rgba(243,74,41,1) 20%, rgba(240,71,38,1) 27%, rgba(241,72,39,1) 33%, rgba(234,64,29,1) 80%, rgba(232,62,29,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,76,42,1)), color-stop(20%,rgba(243,74,41,1)), color-stop(27%,rgba(240,71,38,1)), color-stop(33%,rgba(241,72,39,1)), color-stop(80%,rgba(234,64,29,1)), color-stop(100%,rgba(232,62,29,1)));
+	background: -webkit-linear-gradient(top,  rgba(243,76,42,1) 0%,rgba(243,74,41,1) 20%,rgba(240,71,38,1) 27%,rgba(241,72,39,1) 33%,rgba(234,64,29,1) 80%,rgba(232,62,29,1) 100%);
+	background: -o-linear-gradient(top,  rgba(243,76,42,1) 0%,rgba(243,74,41,1) 20%,rgba(240,71,38,1) 27%,rgba(241,72,39,1) 33%,rgba(234,64,29,1) 80%,rgba(232,62,29,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(243,76,42,1) 0%,rgba(243,74,41,1) 20%,rgba(240,71,38,1) 27%,rgba(241,72,39,1) 33%,rgba(234,64,29,1) 80%,rgba(232,62,29,1) 100%);
+	background: linear-gradient(to bottom,  rgba(243,76,42,1) 0%,rgba(243,74,41,1) 20%,rgba(240,71,38,1) 27%,rgba(241,72,39,1) 33%,rgba(234,64,29,1) 80%,rgba(232,62,29,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f34c2a', endColorstr='#e83e1d',GradientType=0 );
+}
+#pjWrapper .pjHbContainer .btn-default:hover { border-color: #d0391c; color: #fff; 
+	background: rgb(232,62,29);
+	background: -moz-linear-gradient(top,  rgba(232,62,29,1) 0%, rgba(234,64,29,1) 20%, rgba(241,72,39,1) 67%, rgba(240,71,38,1) 73%, rgba(243,74,41,1) 80%, rgba(243,76,42,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,62,29,1)), color-stop(20%,rgba(234,64,29,1)), color-stop(67%,rgba(241,72,39,1)), color-stop(73%,rgba(240,71,38,1)), color-stop(80%,rgba(243,74,41,1)), color-stop(100%,rgba(243,76,42,1)));
+	background: -webkit-linear-gradient(top,  rgba(232,62,29,1) 0%,rgba(234,64,29,1) 20%,rgba(241,72,39,1) 67%,rgba(240,71,38,1) 73%,rgba(243,74,41,1) 80%,rgba(243,76,42,1) 100%);
+	background: -o-linear-gradient(top,  rgba(232,62,29,1) 0%,rgba(234,64,29,1) 20%,rgba(241,72,39,1) 67%,rgba(240,71,38,1) 73%,rgba(243,74,41,1) 80%,rgba(243,76,42,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(232,62,29,1) 0%,rgba(234,64,29,1) 20%,rgba(241,72,39,1) 67%,rgba(240,71,38,1) 73%,rgba(243,74,41,1) 80%,rgba(243,76,42,1) 100%);
+	background: linear-gradient(to bottom,  rgba(232,62,29,1) 0%,rgba(234,64,29,1) 20%,rgba(241,72,39,1) 67%,rgba(240,71,38,1) 73%,rgba(243,74,41,1) 80%,rgba(243,76,42,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e83e1d', endColorstr='#f34c2a',GradientType=0 );
+}
+
+#pjWrapper .pjHbContainer .pjHbBtn { }
+#pjWrapper .pjHbContainer .pjHbBtnHome,
+#pjWrapper .pjHbContainer .pjHbBtnNav { border-color: #191816; background: #292728; color: #fff; }
+
+#pjWrapper .pjHbContainer .pjHbBtnHome:hover,
+#pjWrapper .pjHbContainer .pjHbBtnNav:hover { border-color: #191816; background: #191816; color: #d0391c; }
+
+#pjWrapper .pjHbContainer .pjHbNav .pjHbBtnPassed { color: #d0391c; }
+#pjWrapper .pjHbContainer .pjHbNav .pjHbBtnActive { background: #d0391c; color: #fff; }
+
+#pjWrapper .pjHbContainer .pjHbLanguage ul li a:hover,
+#pjWrapper .pjHbContainer .pjHbLanguage ul li a:focus,
+#pjWrapper .pjHbContainer .pjHbLanguage .pjHbBtnActive { background: #d0391c; color: #fff; }
+
+/* ==========================================================================
+	#pjHbPanelBody
+========================================================================== */
+#pjWrapper .pjHbPanelTitle { color: #d0391c; text-transform: uppercase; text-align: center; }
+#pjWrapper .pjHbPanelBody a { color: #d0391c; }
+
+/* ==========================================================================
+	#pjHbFormCheck
+========================================================================== */
+#pjWrapper .pjHbFormCheck label { color: #5e605f; }
+#pjWrapper .pjHbCalendar .input-group-addon,
+#pjWrapper .pjHbTimePick .input-group-addon { color: #d0391c; }
+#pjWrapper .pjHbCalendar .input-group-addon:hover,
+#pjWrapper .pjHbTimePick .input-group-addon:hover { color: #191816; }
+
+/* ==========================================================================
+	#pjHbProduct
+========================================================================== */
+#pjWrapper .pjHbProduct .panel-heading { color: #fff; text-transform: uppercase; 
+	background: rgb(62,60,61);
+	background: -moz-linear-gradient(top,  rgba(62,60,61,1) 0%, rgba(56,54,55,1) 42%, rgba(50,48,49,1) 65%, rgba(46,44,45,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(62,60,61,1)), color-stop(42%,rgba(56,54,55,1)), color-stop(65%,rgba(50,48,49,1)), color-stop(100%,rgba(46,44,45,1)));
+	background: -webkit-linear-gradient(top,  rgba(62,60,61,1) 0%,rgba(56,54,55,1) 42%,rgba(50,48,49,1) 65%,rgba(46,44,45,1) 100%);
+	background: -o-linear-gradient(top,  rgba(62,60,61,1) 0%,rgba(56,54,55,1) 42%,rgba(50,48,49,1) 65%,rgba(46,44,45,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(62,60,61,1) 0%,rgba(56,54,55,1) 42%,rgba(50,48,49,1) 65%,rgba(46,44,45,1) 100%);
+	background: linear-gradient(to bottom,  rgba(62,60,61,1) 0%,rgba(56,54,55,1) 42%,rgba(50,48,49,1) 65%,rgba(46,44,45,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e3c3d', endColorstr='#2e2c2d',GradientType=0 );
+}
+#pjWrapper .pjHbProduct .panel-body { color: #757e85; }
+#pjWrapper .pjHbProduct a,
+#pjWrapper .pjHbProduct .input-group-addon { color: #d0391c; }
+#pjWrapper .pjHbProductPrice { color: #d0391c; font-weight: bold; }
+
+/* ==========================================================================
+	#pjHbPanelBooking
+========================================================================== */
+#pjWrapper .pjHbPanelBooking a { color: #d0391c; }
+#pjWrapper .pjHbPanelBookingTitle { color: #34383b; }
+#pjWrapper .pjHbPanelBooking { color: #5e605f; }
+#pjWrapper .pjHbPanelBooking .pjHbPanelBookingMeta,
+#pjWrapper .pjHbPanelBooking strong { color: #191718; }
+
+/* ==========================================================================
+	#pjHbExtras
+========================================================================== */
+#pjWrapper .pjHbExtras p,
+#pjWrapper .pjHbExtras .table-responsive { color: #5e605f; }
+#pjWrapper .pjHbExtrasTitle { color: #d0391c; }
+#pjWrapper .pjHbExtraPrice { color: #191718; }
+
+/* ==========================================================================
+	#pjHbFormCheckOut
+========================================================================== */
+#pjWrapper .pjHbFormCheckOutTitle { color: #d0391c; text-transform: uppercase; text-align: center; }
+#pjWrapper .pjHbFormCheckOut .control-label { color: #5e605f; }
+#pjWrapper .pjHbTimePicker .input-group-addon { color: #d0391c; cursor: pointer; }
+
+/* ==========================================================================
+	#pjHbPanelBodyLast
+========================================================================== */
+#pjWrapper .pjHbPanelBodyLast { color: #5e605f; }
+
+/* ==========================================================================
+	#RTL
+========================================================================== */
+[dir="rtl"] #pjWrapper .pjHbCalendar .input-group-addon,
+[dir="rtl"] #pjWrapper .pjHbTimePick .input-group-addon { border-left-color: #ccc; }
+[dir="rtl"] #pjWrapper .pjHbCalendar.has-success .input-group-addon,
+[dir="rtl"] #pjWrapper .has-success .pjHbTimePick .input-group-addon { border-left-color: #3c763d; }
+[dir="rtl"] #pjWrapper .pjHbCalendar.has-error .input-group-addon,
+[dir="rtl"] #pjWrapper .has-error .pjHbTimePick .input-group-addon { border-left-color: #a94442; }
+
+[dir="rtl"] #pjWrapper .pjHbProduct .input-group .input-group-addon { border-right-color: #ccc; }
+[dir="rtl"] #pjWrapper .pjHbProduct .has-success .input-group .input-group-addon { border-right-color: #3c763d; }
+[dir="rtl"] #pjWrapper .pjHbProduct .has-error .input-group .input-group-addon { border-right-color: #a94442; }
+
+#pjWrapper .bootstrap-datetimepicker-widget .datepicker table td span:hover,
+#pjWrapper .datepicker .active { background: #d0391c;}
+
+#pjWrapper .bootstrap-datetimepicker-widget table td.today:before { border-bottom-color: #d0391c; }

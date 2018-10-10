@@ -1,0 +1,99 @@
+/* ==========================================================================
+	#General
+========================================================================== */
+#pjWrapper .pjHbContainer a { color: #1ec290; }
+#pjWrapper .pjHbContainer a:hover { color: #1eaf84; }
+
+/* ==========================================================================
+	#pjHbPanel
+========================================================================== */
+#pjWrapper .pjHbPanel .pjHbPanelHead { background: #fff; }
+#pjWrapper .pjHbPanel .pjHbPanelBody { background: #fff; }
+
+/* ==========================================================================
+	#Buttons
+========================================================================== */
+#pjWrapper .pjHbContainer .btn-default { border-color: #1eaf84; border-width: 2px; background: #1ec290; color: #fff; text-transform: uppercase; }
+#pjWrapper .pjHbContainer .btn-default:hover { border-color: #1eaf84; border-width: 2px; background: #1eaf84; color: #fff; }
+
+#pjWrapper .pjHbContainer .pjHbBtnHome,
+#pjWrapper .pjHbContainer .pjHbBtnNav { border: 0; background: none; color: #1ec290; font-weight: bold; }
+#pjWrapper .pjHbContainer .pjHbBtnHome:hover,
+#pjWrapper .pjHbContainer .pjHbBtnNav:hover { border: 0; background: none; color: #1eaf84; }
+
+#pjWrapper .pjHbContainer .pjHbNav .pjHbBtnPassed { color: #1eaf84; }
+#pjWrapper .pjHbContainer .pjHbNav .pjHbBtnActive { background: #1ec290; color: #fff; }
+
+#pjWrapper .pjHbContainer .pjHbLanguage ul li a:hover,
+#pjWrapper .pjHbContainer .pjHbLanguage ul li a:focus,
+#pjWrapper .pjHbContainer .pjHbLanguage .pjHbBtnActive { background: #1ec290; color: #fff; }
+
+/* ==========================================================================
+	#pjHbPanelBody
+========================================================================== */
+#pjWrapper .pjHbPanelTitle { color: #549e87; text-transform: uppercase; text-align: center; }
+
+/* ==========================================================================
+	#pjHbFormCheck
+========================================================================== */
+#pjWrapper .pjHbFormCheck label { color: #545c5f; }
+#pjWrapper .pjHbCalendar .input-group-addon,
+#pjWrapper .pjHbTimePick .input-group-addon { color: #1ec290; }
+#pjWrapper .pjHbCalendar .input-group-addon:hover,
+#pjWrapper .pjHbTimePick .input-group-addon:hover { color: #1eaf84; }
+
+/* ==========================================================================
+	#pjHbProduct
+========================================================================== */
+#pjWrapper .pjHbProduct .panel-heading { background: #7d8381; color: #f0f2ef; text-transform: uppercase; }
+#pjWrapper .pjHbProduct .panel-body { color: #545c5f; }
+#pjWrapper .pjHbProduct .input-group-addon { color: #1ec290; }
+#pjWrapper .pjHbProductPrice { color: #1ec290; font-weight: bold; }
+
+/* ==========================================================================
+	#pjHbPanelBooking
+========================================================================== */
+#pjWrapper .pjHbPanelBooking a { color: #1ec290; }
+#pjWrapper .pjHbPanelBookingTitle { color: #549e87; }
+#pjWrapper .pjHbPanelBooking { color: #545c5f; }
+#pjWrapper .pjHbPanelBooking .pjHbPanelBookingMeta,
+#pjWrapper .pjHbPanelBooking strong { color: #3e3a39; }
+
+/* ==========================================================================
+	#pjHbExtras
+========================================================================== */
+#pjWrapper .pjHbExtras p,
+#pjWrapper .pjHbExtras .table-responsive { color: #545c5f; }
+#pjWrapper .pjHbExtrasTitle { color: #549e87; }
+#pjWrapper .pjHbExtraPrice { color: #3e3a39; }
+
+/* ==========================================================================
+	#pjHbFormCheckOut
+========================================================================== */
+#pjWrapper .pjHbFormCheckOutTitle { color: #549e87; text-transform: uppercase; text-align: center; }
+#pjWrapper .pjHbFormCheckOut .control-label { color: #545c5f; }
+#pjWrapper .pjHbTimePicker .input-group-addon { color: #1ec290; cursor: pointer; }
+
+/* ==========================================================================
+	#pjHbPanelBodyLast
+========================================================================== */
+#pjWrapper .pjHbPanelBodyLast { color: #545c5f; }
+
+/* ==========================================================================
+	#RTL
+========================================================================== */
+[dir="rtl"] #pjWrapper .pjHbCalendar .input-group-addon,
+[dir="rtl"] #pjWrapper .pjHbTimePick .input-group-addon { border-left-color: #ccc; }
+[dir="rtl"] #pjWrapper .pjHbCalendar.has-success .input-group-addon,
+[dir="rtl"] #pjWrapper .has-success .pjHbTimePick .input-group-addon { border-left-color: #3c763d; }
+[dir="rtl"] #pjWrapper .pjHbCalendar.has-error .input-group-addon,
+[dir="rtl"] #pjWrapper .has-error .pjHbTimePick .input-group-addon { border-left-color: #a94442; }
+
+[dir="rtl"] #pjWrapper .pjHbProduct .input-group .input-group-addon { border-right-color: #ccc; }
+[dir="rtl"] #pjWrapper .pjHbProduct .has-success .input-group .input-group-addon { border-right-color: #3c763d; }
+[dir="rtl"] #pjWrapper .pjHbProduct .has-error .input-group .input-group-addon { border-right-color: #a94442; }
+
+#pjWrapper .bootstrap-datetimepicker-widget .datepicker table td span:hover,
+#pjWrapper .datepicker .active { background: #1ec290; }
+
+#pjWrapper .bootstrap-datetimepicker-widget table td.today:before { border-bottom-color: #1ec290; }
