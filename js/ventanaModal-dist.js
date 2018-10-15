@@ -38,8 +38,7 @@ var Ventana = function Ventana(props) {
 						React.createElement(
 							"div",
 							{ className: "form-group" },
-							React.createElement("input", { type: "text", className: "form-control", id: "nombre",
-								name: "nombre", placeholder: "Ingrese Nombre" })
+							React.createElement("input", { type: "text", className: "form-control", id: "nombre", name: "nombre", placeholder: "Ingrese Nombre" })
 						)
 					)
 				),
@@ -48,7 +47,7 @@ var Ventana = function Ventana(props) {
 					{ className: "modal-footer" },
 					React.createElement(
 						"button",
-						{ type: "button", className: "btn btn-primary", onClick: props.funcion },
+						{ type: "button", className: "btn btn-primary", onClick: nuevoTurno },
 						"Guardar"
 					),
 					React.createElement(
@@ -72,7 +71,7 @@ var Ventana = function Ventana(props) {
 ReactDOM.render(React.createElement(
 	"div",
 	null,
-	React.createElement(Ventana, { id: "vtnTurno", titulo: "Tipo de Recurso", funcion: "enviarTurno()" }),
+	React.createElement(Ventana, { id: "vtnTurno", titulo: "Tipo de Recurso", funcion: "nuevoTurno" }),
 	React.createElement(Ventana, { id: "vtnRemite", titulo: "Area que Remite", funcion: "enviarRemite()" }),
 	React.createElement(Ventana, { id: "vtnBeneficia", titulo: "Area que Beneficia", funcion: "enviarBeneficia()" }),
 	React.createElement(Ventana, { id: "vtnAtencion", titulo: "Departamento Responsable de Atenci\xF3n", funcion: "enviarAtencion()" })

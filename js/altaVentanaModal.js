@@ -3,8 +3,10 @@
 function enviarTurno(e)
 {
 	e.preventDefault();//evita que se recarge la pagina
+	console.log("Entre...");
 	var formData = new FormData(document.getElementById("form-vtnTurno"));
-
+	console.log("entre");
+	alert("entré");
 	$.$.ajax({
 		url: 'enviarTurno.php',
 		type: 'POST',
@@ -15,13 +17,16 @@ function enviarTurno(e)
 		/* Se hizo bien 
 		   LIMPIAMOS LOS DATOS DEL FORMULARIO
 		 */ 
+		 console.log("resultado: "+datos.resultadoX);
         document.getElementById("form-vtnTurno").reset();
 	})
-	.fail(function() {
+	.fail(function(datos) {
 		console.log("error");
+		console.log("resultado: "+datos.resultadoX);
 	})
 	.always(function() {
 		console.log("complete");
+		console.log("resultado: "+datos.resultadoX);
 	});
 }
 
