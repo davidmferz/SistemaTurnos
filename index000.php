@@ -60,7 +60,6 @@
         <div style="margin-left: 15px;">
             <h5>Inicio sesión como: <b> <?php echo $bienvenido."  " ?> </b> <a href="salir.php" style="color:red"> salir</a></h5>
         </div>
-    
 
 	<br><br><br>
     <!--OPCIONES-->
@@ -93,7 +92,33 @@
     <div id="ventanaEliminar">
         
     </div>
-    
+
+    <!-- DESDE AQUI COMIENZA LA VENTANA MODAL DE LA OPCION DE EDITAR -->
+    <div class="modal fade" id="VentanaModalE" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-Imagen" id="modalImagen" style="text-align: center;">
+                    <!--Esta parte se carga dinamicamente-->
+                    ...
+                </div>
+
+                <div class="modal-body" id="modalBody" style="text-align: justify;">
+                    <!--Esta parte se carga dinamicamente-->
+                    ...
+                </div>
+                <div class="modal-footer" id="modalBotones">
+                    <!--Esta parte se carga dinamicamente-->
+                    ...
+                </div>
+            </div>
+        </div>
+    </div><!--AQUI TERMINA LA VENTANA MODAL DE LA OPCION DE EDITAR-->
 
     <table class="table">
       <thead>
@@ -213,7 +238,7 @@
                     t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
                     for (i in datos) 
                     {
-                        t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
+                        t_re.innerHTML +=`<option label='${datos[i].name}' value='${datos[i].id}'>${datos[i].name}</option>`;
                     }
                 },
                 error: function(XMLHttpRequest)
@@ -225,42 +250,38 @@
 
     function cargar()
     {
-    var dato = document.getElementById("select-vtnTurnoEditar").value;
-    document.getElementById("otro1").value = dato;
-
-        /*boton.innerHTML=`
-            <button type="button" id="btnAgregar" class="btn btn-primary" data-toggle="modal"  onclick="cargarRecursos('${id}','${valor}')" data-target="#VentanaModal">Editar
-            </button>
-        `;*/
+      var dato = document.getElementById("select-vtnTurnoEditar").label;
+      document.getElementById("otro1").innerHTML = dato;
     }
 
-    function cargarRecursos(id, valor) //VENTANA MODAL PARA TIPO DE RECURSO
-        {
-            //Cargar Tipo de recurso
-            //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
-            var nuevo = document.getElementById("otro1").value;
-            document.getElementById("modalImagen").innerHTML=`<img src="imagenes/Informacion-128.png" alt="Imagen no econtrada">`; 
-            if(!(nuevo.trim() == ""))
-            {
-                document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
-                document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar el tipo de recurso <b>"+valor+"</b> a <b>"+nuevo+"</b>,? si continua se actualizara automaticamente el nuevo valor para todas las obras registradas con el tipo de recurso <b>"+valor+"</b> ahora va ser <b>"+nuevo+"</b>";
-
-                
-                document.getElementById("modalBotones").innerHTML=`
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancelarRecursos()">NO, Cancelar
-                    </button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" 
-                        onclick="editarRecrusos2('${id}','${nuevo}')">Si, Cambiar
-                    </button>
-                `;
-            }
-            else
-            {
-                document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
-                document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
-            }
-        }
-
+    function actualiza()
+    {
+      console.log("hola");
+      //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
+      var valor = document.getElementById("select-vtnTurnoEditar").innerText;
+      var nuevo = document.getElementById("otro1").innerHTML;
+      console.log(valor.innerText);
+      console.log(nuevo);
+      document.getElementById("modalImagen").innerHTML=`<img src="imagenes/Informacion-128.png" alt="Imagen no econtrada">`; 
+      if(!(nuevo.trim() == ""))
+      {
+          document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
+          document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar <b>"+valor+"</b> a <b>"+nuevo+"</b>";
+          
+          document.getElementById("modalBotones").innerHTML=`
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancelarRecursos()">NO, Cancelar
+              </button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" 
+                  onclick="editarRecrusos2('${id}','${nuevo}')">Si, Cambiar
+              </button>
+          `;
+      }
+      else
+      {
+          document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
+          document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
+      }
+    }
 
 </script>
 
