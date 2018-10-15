@@ -5,6 +5,7 @@ function enviarTurno(e)
 	e.preventDefault();//evita que se recarge la pagina
 	var formData = new FormData(document.getElementById("form-vtnTurno"));
 	console.log("entre");
+	alert("entré");
 	$.$.ajax({
 		url: 'enviarTurno.php',
 		type: 'POST',

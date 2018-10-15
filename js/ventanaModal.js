@@ -14,13 +14,12 @@ const Ventana = props =>{
 		      	<br/>
 		        <form id={"form-"+props.id}>
 					<div className="form-group">
-						<input type="text" className="form-control" id="nombre" 
-						 name="nombre" placeholder="Ingrese Nombre"/>
+						<input type="text" className="form-control" id="nombre" name="nombre" placeholder="Ingrese Nombre"/>
 					</div>
 				</form>
 		      </div>
 		      <div className="modal-footer">
-		        <button type="button" className="btn btn-primary" onclick="nuevoTurno()">Guardar</button>
+		        <button type="button" className="btn btn-primary" onClick={nuevoTurno}>Guardar</button>
 		        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
@@ -38,7 +37,7 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurno" titulo="Tipo de Recurso"  funcion="nuevoTurno()"/>
+		<Ventana id="vtnTurno" titulo="Tipo de Recurso" funcion="nuevoTurno"/>
 		<Ventana id="vtnRemite" titulo="Area que Remite"  funcion="enviarRemite()"/>
 		<Ventana id="vtnBeneficia" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
 		<Ventana id="vtnAtencion" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
