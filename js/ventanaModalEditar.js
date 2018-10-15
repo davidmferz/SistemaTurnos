@@ -14,7 +14,7 @@ const Ventana = props =>{
 		      	<br/>
 		        <form id={"form-"+props.id}>
 					<div className="form-group">
-						<select className="form-control grupos" id={"select-"+props.id} name="nombre">
+						<select className="form-control grupos" id={"select-"+props.id} onChange={cargar} name="nombre">
 						 <option value="0">Seleccione una opcion</option>
 						 </select>
 					</div>
@@ -23,14 +23,16 @@ const Ventana = props =>{
 				<input type="text" className="form-control" name="nombre" id="otro1"/>
 		      </div>
 		      <div className="modal-footer">
-		        <button type="button" className="btn btn-primary" onClick={props.funcion}>Editar</button>
+		        <button type="button" id="editar" className="btn btn-primary" onClick={cargar}>Editar</button>
 		        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
 	)
+
 };
+
 
 /* 	Aqui se crean las 4 ventanas Modales para
 	-Tipo de Turno

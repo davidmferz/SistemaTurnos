@@ -12,7 +12,7 @@ function nuevoTurno(e)
 		dataType: 'json',
 		data: {nom1: nom},
 		beforeSend: function(){
-     	console.log("Se está procesando la info ");
+     	console.log("Se está procesando la informacion ");
     },
 	})
 	.done(function(datos) {

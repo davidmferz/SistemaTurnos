@@ -3,6 +3,7 @@
 function enviarTurno(e)
 {
 	e.preventDefault();//evita que se recarge la pagina
+	console.log("Entre...");
 	var formData = new FormData(document.getElementById("form-vtnTurno"));
 	console.log("entre");
 	alert("entré");

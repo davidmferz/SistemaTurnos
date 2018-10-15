@@ -31,8 +31,10 @@
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 
     <!--INSTALACION DE REACT -->
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script src="js/altaVentanaModal.js"></script>
     
     
 </head>
@@ -215,7 +217,7 @@
                     t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
                     for (i in datos) 
                     {
-                        t_re.innerHTML +=`<option value='${datos[i].id}'>${datos[i].name}</option>`;
+                        t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
                     }
                 },
                 error: function(XMLHttpRequest)
@@ -225,14 +227,15 @@
             });
     }
 
-    function cargar(id, valor)
+    function cargar()
     {
-      var boton = document.getElementById("btnRecursos");
-        boton.innerHTML=`
-            <div style="color:#fff; padding-bottom: 0.4em;">-</div>
-            <button type="button" id="btnAgregar" class="btn btn-success media-middle" data-toggle="modal"  onclick="cargarRecursos('${id}','${valor}')" data-target="#VentanaModal">Editar
+    var dato = document.getElementById("select-vtnTurnoEditar").value;
+    document.getElementById("otro1").value = dato;
+
+        /*boton.innerHTML=`
+            <button type="button" id="btnAgregar" class="btn btn-primary" data-toggle="modal"  onclick="cargarRecursos('${id}','${valor}')" data-target="#VentanaModal">Editar
             </button>
-        `;
+        `;*/
     }
 
     function cargarRecursos(id, valor) //VENTANA MODAL PARA TIPO DE RECURSO
@@ -269,7 +272,11 @@
 <script src="js/nuevoTurno.js"></script>
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
+
+   
+
     <script src="js/ventanaModalEliminar-dist.js"></script>
+
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
