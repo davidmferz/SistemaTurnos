@@ -19,7 +19,7 @@ function nuevoTurno(e)
 		/* Se hizo bien 
 		   LIMPIAMOS LOS DATOS DEL FORMULARIO
 		 */ 
-		 console.log("exito");
+		 console.log("exitoX: "+datos.resultado);
 		 //console.log("resultado: "+datos.resultadoX);
         //document.getElementById("form-vtnTurno").reset();
 	})
