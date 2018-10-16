@@ -242,7 +242,7 @@
                     t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
                     for (i in datos) 
                     {
-                        t_re.innerHTML +=`<option label='${datos[i].name}' value='${datos[i].id}'>${datos[i].name}</option>`;
+                        t_re.innerHTML +=`<option value='${datos[i].id}'>${datos[i].name}</option>`;
                     }
                 },
                 error: function(XMLHttpRequest)
@@ -254,19 +254,30 @@
 
     function cargar()
     {
-      var dato = document.getElementById("select-vtnTurnoEditar").label;
-      document.getElementById("otro1").innerHTML = dato;
+      var dato = document.getElementById("select-vtnTurnoEditar").value;
+      document.getElementById("text-vtnTurnoEditar").innerHTML = dato;
+      var z = document.getElementById("text-vtnTurnoEditar").innerHTML;
+      console.log(z);
+      console.log(dato);
+      var x = document.getElementByClassName("modal");
+      var txt = "";
+      var i;
+      for (i = 0; i < x.attributes.length; i++)
+      {
+        txt = txt + x.attributes[i].name + " = " + x.attributes[i].value + "<br>";
+      }
+      console.log(txt);
     }
 
     function actualiza()
     {
       console.log("hola");
       //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
-      var valor = document.getElementById("select-vtnTurnoEditar").innerText;
-      var nuevo = document.getElementById("otro1").innerHTML;
-      console.log(valor.innerText);
+      var valor = document.getElementById("select-vtnTurnoEditar").value;
+      var nuevo = document.getElementById("text-vtnTurnoEditar").innerHTML;
+      console.log(valor);
       console.log(nuevo);
-      document.getElementById("modalImagen").innerHTML=`<img src="imagenes/Informacion-128.png" alt="Imagen no econtrada">`; 
+      document.getElementById("modalImagen").innerHTML=`<img src="img/Informacion-128.png" alt="Imagen no econtrada">`; 
       if(!(nuevo.trim() == ""))
       {
           document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
@@ -290,7 +301,7 @@
 </script>
 
 <!-- VENTANA MODAL ENLACE -->
-<script src="js/nuevoTurno.js"></script>
+    <script src="js/nuevoTurno.js"></script>
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
 

@@ -20,7 +20,7 @@ const Ventana = props =>{
 					</div>
 				</form>
 				<br/>
-				<input type="text" className="form-control" name="nombre" id="otro1"/>
+				<input type="text" className="form-control" name="nombre2" id={"text-"+props.id}/>
 		      </div>
 		      <div className="modal-footer">
 		        <button type="button" id="editar" className="btn btn-primary" onClick={actualiza}>Editar</button>
@@ -28,6 +28,7 @@ const Ventana = props =>{
 		      </div>
 		    </div>
 		  </div>
+		  
 		</div>
 	)
 
