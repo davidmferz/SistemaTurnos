@@ -38,7 +38,8 @@ var Ventana = function Ventana(props) {
 						React.createElement(
 							"div",
 							{ className: "form-group" },
-							React.createElement("input", { type: "text", className: "form-control", id: "nombre", name: "nombre", placeholder: "Ingrese Nombre" })
+							React.createElement("input", { type: "text", className: "form-control", id: "nombre", name: "nombre", placeholder: "Ingrese Nombre" }),
+							React.createElement("input", { type: "text", id: "idx", value: props.id, name: "idx" })
 						)
 					)
 				),

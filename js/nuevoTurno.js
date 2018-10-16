@@ -3,6 +3,8 @@ function nuevoTurno(e)
 	//e.preventDefault();//evita que se recarge la pagina
 	//var formData = new FormData(document.getElementById("form-vtnTurno"));
 	var nom= document.getElementById("nombre").value;
+	var tipo=document.getElementsByTagName("FORM");
+	console.log(tipo);
 	console.log("entre");
 	console.log(nom);
 	
