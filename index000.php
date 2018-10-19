@@ -141,7 +141,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','select-vtnTurnoEditar')" data-toggle="modal" data-target="#vtnTurnoEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','vtnTurnoEditar')" data-toggle="modal" data-target="#vtnTurnoEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -161,7 +161,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('arearemite','select-vtnRemiteEditar')" data-toggle="modal" data-target="#vtnRemiteEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('arearemite','vtnRemiteEditar')" data-toggle="modal" data-target="#vtnRemiteEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -181,7 +181,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('areabeneficiada','select-vtnBeneficiaEditar')" data-toggle="modal" data-target="#vtnBeneficiaEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('areabeneficiada','vtnBeneficiaEditar')" data-toggle="modal" data-target="#vtnBeneficiaEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -201,7 +201,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('responsableatencion','select-vtnAtencionEditar')" data-toggle="modal" data-target="#vtnAtencionEditar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('responsableatencion','vtnAtencionEditar')" data-toggle="modal" data-target="#vtnAtencionEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
@@ -222,8 +222,14 @@
 
 <script>
 
+var tabla2 = null;
+var vtn = null;
   function consulta_Select(tabla, select)
     {
+      tabla2=tabla;
+      vtn=select;
+      var aux = "select-";
+      aux += vtn;
             $.ajax({
                 url:"consulta_Select.php?tabla="+tabla,
                 type:"GET",
@@ -238,11 +244,11 @@
                 },
                 success: function(datos)
                 {
-                    var t_re=document.getElementById(select);
+                    var t_re=document.getElementById(aux);
                     t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
                     for (i in datos) 
                     {
-                        t_re.innerHTML +=`<option value='${datos[i].id}'>${datos[i].name}</option>`;
+                        t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
                     }
                 },
                 error: function(XMLHttpRequest)
@@ -254,19 +260,12 @@
 
     function cargar()
     {
-      var dato = document.getElementById("select-vtnTurnoEditar").value;
-      document.getElementById("text-vtnTurnoEditar").innerHTML = dato;
-      var z = document.getElementById("text-vtnTurnoEditar").innerHTML;
-      console.log(z);
-      console.log(dato);
-      var x = document.getElementByClassName("modal");
-      var txt = "";
-      var i;
-      for (i = 0; i < x.attributes.length; i++)
-      {
-        txt = txt + x.attributes[i].name + " = " + x.attributes[i].value + "<br>";
-      }
-      console.log(txt);
+      var aux = "select-";
+      aux += vtn;
+      var aux2 = "text-";
+      aux2 += vtn;
+      var dato = document.getElementById(aux).value;
+      document.getElementById(aux2).value=dato;
     }
 
     function actualiza()
