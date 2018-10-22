@@ -282,7 +282,10 @@ var vtn = null;
       console.log(valor);
       console.log(nuevo);
       console.log(tabla2);
-      $.ajax({
+      
+      
+
+      var llamada = $.ajax({
         url:"editar.php",
         type:"POST",
         dataType:"json",
@@ -290,6 +293,16 @@ var vtn = null;
         data:{valor1 : valor, nuevo1 : nuevo, tabla1 :  tabla2},
         beforeSend: function()
         {
+          var r= confirm("Realmente desea editar el campo\n"+valor+" por "+nuevo);
+          if (r==true) {
+            
+
+          }
+          else
+          {
+            
+            llamada.abort();
+          }
         },
       })
       .done(function(datos) {
