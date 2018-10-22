@@ -75,7 +75,10 @@
     		<a href="#"><img src="img/buscar.png" alt="imagen"></a>
     		<h5>Buscar un turno</h5>
     	</div>
+      <input type="text" id="idx" name="idx" style="display: none">
     </div>
+
+
 
      <!--
     VENTANA MODAL para agregar: 
@@ -136,7 +139,7 @@
         <tr>
           <th scope="row">Tipo de Turno</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno" onclick="consultaAgregar('vtnTurno')">
               <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -156,7 +159,7 @@
         <tr>
           <th scope="row">Area que Remite</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite" onclick="consultaAgregar('vtnRemite')">
               <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -176,7 +179,7 @@
         <tr>
           <th scope="row">Area que Beneficia</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia" onclick="consultaAgregar('vtnBeneficia')">
                 <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -196,7 +199,7 @@
         <tr>
           <th scope="row">Departamento Responsable de Atención</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion" onclick="consultaAgregar('vtnAtencion')">
                 <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -297,6 +300,14 @@ var vtn = null;
       }
     }
 
+</script>
+
+<script>
+  function consultaAgregar(ventana)
+  {
+    var vent=ventana;
+    document.getElementById("idx").value=vent;
+  }
 </script>
 
 <!-- VENTANA MODAL ENLACE -->
