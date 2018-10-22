@@ -146,7 +146,7 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurnoEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','vtnTurnoEliminar')" data-toggle="modal" data-target="#vtnTurnoEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -167,7 +167,7 @@
           </td>
 
            <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemiteEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('arearemite','vtnRemiteEliminar')" data-toggle="modal" data-target="#vtnRemiteEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -187,7 +187,7 @@
           </td>
 
             <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficiaEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('areabeneficiada','vtnBeneficiaEliminar')" data-toggle="modal" data-target="#vtnBeneficiaEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -207,7 +207,7 @@
           </td>
           <!--elim-->
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencionEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta_Select('responsableatencion','vtnAtencionEliminar')" data-toggle="modal" data-target="#vtnAtencionEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -303,9 +303,6 @@ var vtn = null;
     <script src="js/nuevoTurno.js"></script>
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
-
-   
-
     <script src="js/ventanaModalEliminar-dist.js"></script>
 
     
