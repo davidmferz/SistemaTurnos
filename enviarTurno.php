@@ -22,6 +22,7 @@
     case "vtnAtencion":
         $resultado=mysqli_query($con,"INSERT INTO 	responsableatencion(nombre) VALUES('$nombre')");
         break;
+        
 }
 
 	

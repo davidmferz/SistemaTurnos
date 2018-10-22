@@ -9,6 +9,7 @@ function nuevoTurno(e)
 	
 	
 	
+	
 	$.ajax({
 		url: 'enviarTurno.php',
 		type: 'POST',
