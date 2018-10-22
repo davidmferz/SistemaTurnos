@@ -20,7 +20,7 @@ var Ventana = function Ventana(props) {
 					),
 					React.createElement(
 						"button",
-						{ type: "button", className: "close", "data-dismiss": "modal", "aria-label": "Close" },
+						{ type: "button", className: "close", "data-dismiss": "modal", "aria-label": "Close", onClick: limpia },
 						React.createElement(
 							"span",
 							{ "aria-hidden": "true" },
@@ -62,7 +62,7 @@ var Ventana = function Ventana(props) {
 					),
 					React.createElement(
 						"button",
-						{ type: "button", className: "btn btn-secondary", "data-dismiss": "modal" },
+						{ type: "button", className: "btn btn-secondary", "data-dismiss": "modal", onClick: limpia },
 						"Close"
 					)
 				)
@@ -81,8 +81,8 @@ var Ventana = function Ventana(props) {
 ReactDOM.render(React.createElement(
 	"div",
 	null,
-	React.createElement(Ventana, { id: "vtnTurnoEditar", titulo: "Tipo de Turno", funcion: "editarTurno()" }),
-	React.createElement(Ventana, { id: "vtnRemiteEditar", titulo: "Area que Remite", funcion: "enviarRemite()" }),
-	React.createElement(Ventana, { id: "vtnBeneficiaEditar", titulo: "Area que Beneficia", funcion: "enviarBeneficia()" }),
-	React.createElement(Ventana, { id: "vtnAtencionEditar", titulo: "Departamento Responsable de Atenci\xF3n", funcion: "enviarAtencion()" })
+	React.createElement(Ventana, { id: "vtnTurnoEditar", titulo: "Tipo de Turno" }),
+	React.createElement(Ventana, { id: "vtnRemiteEditar", titulo: "Area que Remite" }),
+	React.createElement(Ventana, { id: "vtnBeneficiaEditar", titulo: "Area que Beneficia" }),
+	React.createElement(Ventana, { id: "vtnAtencionEditar", titulo: "Departamento Responsable de Atenci\xF3n" })
 ), document.getElementById('ventanaEditar'));

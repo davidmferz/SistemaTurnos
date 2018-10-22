@@ -97,7 +97,7 @@
     </div>
 
     <!-- DESDE AQUI COMIENZA LA VENTANA MODAL DE LA OPCION DE EDITAR -->
-    <div class="modal fade" id="VentanaModalE" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="VentanaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -270,32 +270,95 @@ var vtn = null;
 
     function actualiza()
     {
-      console.log("hola");
-      //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
-      var valor = document.getElementById("select-vtnTurnoEditar").value;
-      var nuevo = document.getElementById("text-vtnTurnoEditar").innerHTML;
+      var aux = "select-";
+      aux += vtn;
+      var aux2 = "text-";
+      aux2 += vtn;
+      var valor = document.getElementById(aux).value;
+      var nuevo = document.getElementById(aux2).value;
       console.log(valor);
       console.log(nuevo);
-      document.getElementById("modalImagen").innerHTML=`<img src="img/Informacion-128.png" alt="Imagen no econtrada">`; 
+      console.log(tabla2);
+      $.ajax({
+        url:"editar.php",
+        type:"POST",
+        dataType:"json",
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        data:{valor1 : valor, nuevo1 : nuevo, tabla1 :  tabla2},
+        beforeSend: function()
+        {
+        },
+      })
+      .done(function(datos) {
+         console.log("exitoX: "+datos.resultado);
+         consulta_Select(tabla2, vtn);
+      })
+      .fail(function(datos) {
+        console.log("error en "+datos.resultado);
+      })
+      .always(function() {
+        console.log("complete");
+    });
+
+      /*document.getElementById("modalImagen").innerHTML=`<img src="img/Informacion-128.png" alt="Imagen no econtrada">`; 
       if(!(nuevo.trim() == ""))
       {
-          document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
-          document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar <b>"+valor+"</b> a <b>"+nuevo+"</b>";
-          
-          document.getElementById("modalBotones").innerHTML=`
-              <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancelarRecursos()">NO, Cancelar
-              </button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" 
-                  onclick="editarRecrusos2('${id}','${nuevo}')">Si, Cambiar
-              </button>
-          `;
+        console.log("si entro");
+        document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
+        document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar <b>"+valor+"</b> a <b>"+nuevo+"</b>";
+        
+        document.getElementById("modalBotones").innerHTML=`
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpiar()">NO, Cancelar
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" 
+                onclick="editar('${valor}','${nuevo}')">Si, Cambiar
+            </button>
+        `;
       }
       else
       {
-          document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
-          document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
+        console.log("no entro");
+        document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
+        document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
       }
+      console.log("no hizo nada :´(");*/
     }
+
+  function limpia()
+  {
+    var aux2 = "text-";
+    aux2 += vtn;
+    document.getElementById(aux2).value=null;
+  }
+
+  /*function editar(valor,nuevo)
+  {
+    var boton = document.getElementById("btnRecursos");
+    $.ajax({
+        url:"EditarRecursos.php?id="+id+"&nombre="+t_recurso,
+        type:"GET",
+        dataType:"HTML",
+        cache:false,
+        contentType: false,
+        encode:true,
+        processData: false,
+        beforeSend: function()
+        {
+                     
+        },
+        success: function(datos)
+        {
+            listaRecursos();
+            document.getElementById("otro1").value="";
+            boton.innerHTML=`
+                <div style="color:#fff; padding-bottom: 0.4em;">-</div>
+                 <button type="button" id="btnAgregar" class="btn btn-success media-middle" name="btnIngresar" onclick="otro()">Agregar
+                 </button>
+            `;
+           llenar(Sid);
+        }
+    });
+  }*/
 
 </script>
 

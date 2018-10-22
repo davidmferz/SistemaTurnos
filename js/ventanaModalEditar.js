@@ -6,7 +6,7 @@ const Ventana = props =>{
 		    <div className="modal-content">
 		      <div className="modal-header">
 		        <h5 className="modal-title">{props.titulo}</h5>
-		        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+		        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={limpia}>
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
@@ -24,7 +24,7 @@ const Ventana = props =>{
 		      </div>
 		      <div className="modal-footer">
 		        <button type="button" id="editar" className="btn btn-primary" onClick={actualiza}>Editar</button>
-		        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={limpia}>Close</button>
 		      </div>
 		    </div>
 		  </div>
@@ -44,10 +44,10 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurnoEditar" titulo="Tipo de Turno"  funcion="editarTurno()"/>
-		<Ventana id="vtnRemiteEditar" titulo="Area que Remite"  funcion="enviarRemite()"/>
-		<Ventana id="vtnBeneficiaEditar" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
-		<Ventana id="vtnAtencionEditar" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
+		<Ventana id="vtnTurnoEditar" titulo="Tipo de Turno"/>
+		<Ventana id="vtnRemiteEditar" titulo="Area que Remite"/>
+		<Ventana id="vtnBeneficiaEditar" titulo="Area que Beneficia"/>
+		<Ventana id="vtnAtencionEditar" titulo="Departamento Responsable de Atención"/>
 	</div>, 
 	document.getElementById('ventanaEditar')
 );
