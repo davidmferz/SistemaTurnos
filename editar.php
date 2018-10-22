@@ -7,11 +7,13 @@
 	
 	$resultado=mysqli_query($con,"UPDATE $tabla SET nombre='$nuevo' WHERE nombre='$valor'");
 		
-	if ($resultado!=true) {
+	if ($resultado!=true)
+	{
 		$jsondata["resultado"]=mysqli_error($con);
 	}
 
-	else{
+	else
+	{
 		$jsondata["resultado"]=$resultado;
 	}
 
