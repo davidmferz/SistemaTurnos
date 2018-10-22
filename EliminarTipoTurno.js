@@ -2,21 +2,19 @@ function nuevoTurno(e)
 {
 	//e.preventDefault();//evita que se recarge la pagina
 	//var formData = new FormData(document.getElementById("form-vtnTurno"));
-	var auxiliar="text-";
-	var tipo= document.getElementById("idx").value;
-	auxiliar += tipo;
-	var nom= document.getElementById(auxiliar).value;
+	var vtnTurnoEliminar= document.getElementById("select-vtnTurnoEliminar").value;
+	//var tipo=document.getElementsByTagName("FORM");
 	
-	console.log(auxiliar);
-	console.log("el tipo de venatana es: "+tipo);
-	console.log("el nombre que se va a guardar es "+nom);
-	
+	var tipo=document.getElementsByTagName("FORM");
+	console.log(tipo);
+	console.log("entre");
+	console.log(nom);
 	
 	$.ajax({
-		url: 'enviarTurno.php',
+		url: 'EliminarTipoTurno.php',
 		type: 'POST',
 		dataType: 'json',
-		data: {nom1: nom, tipo1: tipo},
+		data: {nom1: nom},
 		beforeSend: function(){
      	console.log("Se está procesando la informacion ");
     },
@@ -25,13 +23,12 @@ function nuevoTurno(e)
 		/* Se hizo bien 
 		   LIMPIAMOS LOS DATOS DEL FORMULARIO
 		 */ 
-		 console.log("exitoX: "+datos.resultado);
-		 
+		 console.log("exitoX: "+datos.TipoturnoEliminar);
 		 //console.log("resultado: "+datos.resultadoX);
         //document.getElementById("form-vtnTurno").reset();
 	})
 	.fail(function(datos) {
-		console.log("error en "+datos.resultado);
+		console.log("error en "+datos.TipoturnoEliminar);
 		
 	})
 	.always(function() {
