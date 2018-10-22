@@ -8,8 +8,6 @@ function nuevoTurno(e)
 	console.log("el nombre que se va a guardar es "+nom);
 	
 	
-	
-	
 	$.ajax({
 		url: 'enviarTurno.php',
 		type: 'POST',
