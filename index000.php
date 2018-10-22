@@ -35,6 +35,9 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
     <script src="js/altaVentanaModal.js"></script>
+
+    <!--VALIDAR EL NOMBRE NO SEA EL MISMO-->
+    <script src="validar.js"></script>
     
     
 </head>
@@ -282,6 +285,7 @@ var vtn = null;
       console.log(valor);
       console.log(nuevo);
       console.log(tabla2);
+      validar_nombre(aux);
       $.ajax({
         url:"editar.php",
         type:"POST",
@@ -291,40 +295,17 @@ var vtn = null;
         beforeSend: function()
         {
         },
-      })
-      .done(function(datos) {
-         console.log("exitoX: "+datos.resultado);
-         consulta_Select(tabla2, vtn);
-      })
-      .fail(function(datos) {
-        console.log("error en "+datos.resultado);
-      })
-      .always(function() {
-        console.log("complete");
-    });
-
-      /*document.getElementById("modalImagen").innerHTML=`<img src="img/Informacion-128.png" alt="Imagen no econtrada">`; 
-      if(!(nuevo.trim() == ""))
-      {
-        console.log("si entro");
-        document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
-        document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar <b>"+valor+"</b> a <b>"+nuevo+"</b>";
-        
-        document.getElementById("modalBotones").innerHTML=`
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpiar()">NO, Cancelar
-            </button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" 
-                onclick="editar('${valor}','${nuevo}')">Si, Cambiar
-            </button>
-        `;
-      }
-      else
-      {
-        console.log("no entro");
-        document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
-        document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
-      }
-      console.log("no hizo nada :´(");*/
+        })
+        .done(function(datos) {
+           console.log("exitoX: "+datos.resultado);
+           consulta_Select(tabla2, vtn);
+        })
+        .fail(function(datos) {
+          console.log("error en "+datos.resultado);
+        })
+        .always(function() {
+          console.log("complete");
+      });
     }
 
   function limpia()
@@ -333,35 +314,6 @@ var vtn = null;
     aux2 += vtn;
     document.getElementById(aux2).value=null;
   }
-
-  /*function editar(valor,nuevo)
-  {
-    var boton = document.getElementById("btnRecursos");
-    $.ajax({
-        url:"EditarRecursos.php?id="+id+"&nombre="+t_recurso,
-        type:"GET",
-        dataType:"HTML",
-        cache:false,
-        contentType: false,
-        encode:true,
-        processData: false,
-        beforeSend: function()
-        {
-                     
-        },
-        success: function(datos)
-        {
-            listaRecursos();
-            document.getElementById("otro1").value="";
-            boton.innerHTML=`
-                <div style="color:#fff; padding-bottom: 0.4em;">-</div>
-                 <button type="button" id="btnAgregar" class="btn btn-success media-middle" name="btnIngresar" onclick="otro()">Agregar
-                 </button>
-            `;
-           llenar(Sid);
-        }
-    });
-  }*/
 
 </script>
 
