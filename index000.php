@@ -282,40 +282,7 @@ var vtn = null;
       aux2 += vtn;
       var valor = document.getElementById(aux).value;
       var nuevo = document.getElementById(aux2).value;
-      console.log(valor);
-      console.log(nuevo);
-      console.log(tabla2);
-      validar_nombre(aux);
-      var llamada = $.ajax({
-        url:"editar.php",
-        type:"POST",
-        dataType:"json",
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        data:{valor1 : valor, nuevo1 : nuevo, tabla1 :  tabla2},
-        beforeSend: function()
-        {
-          var r= confirm("Realmente desea editar el campo\n"+valor+" por "+nuevo);
-          if (r==true) {
-            
-
-          }
-          else
-          {
-            
-            llamada.abort();
-          }
-        },
-        })
-        .done(function(datos) {
-           console.log("exitoX: "+datos.resultado);
-           consulta_Select(tabla2, vtn);
-        })
-        .fail(function(datos) {
-          console.log("error en "+datos.resultado);
-        })
-        .always(function() {
-          console.log("complete");
-      });
+      validar_nombre(aux, aux2, tabla2, vtn);
     }
 
   function limpia()
