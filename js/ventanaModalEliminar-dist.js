@@ -56,7 +56,7 @@ var Ventana = function Ventana(props) {
 					{ className: "modal-footer" },
 					React.createElement(
 						"button",
-						{ type: "button", className: "btn btn-primary", onClick: props.id },
+						{ type: "button", className: "btn btn-primary", onClick: elimina },
 						"Eliminar"
 					),
 					React.createElement(
@@ -80,8 +80,8 @@ var Ventana = function Ventana(props) {
 ReactDOM.render(React.createElement(
 	"div",
 	null,
-	React.createElement(Ventana, { id: "vtnTurnoEliminar", titulo: "Eliminar Tipo de Turno", funcion: "eliminarTurno()" }),
-	React.createElement(Ventana, { id: "vtnRemiteEliminar", titulo: "Eliminar Area que Remite", funcion: "eliminarRemite()" }),
-	React.createElement(Ventana, { id: "vtnBeneficiaEliminar", titulo: "Eliminar Area que Beneficia", funcion: "eliminarBeneficia()" }),
-	React.createElement(Ventana, { id: "vtnAtencionEliminar", titulo: "Eliminar Departamento Responsable de Atenci\xF3n", funcion: "eliminarAtencion()" })
+	React.createElement(Ventana, { id: "vtnTurnoEliminar", titulo: "Eliminar Tipo de Turno" }),
+	React.createElement(Ventana, { id: "vtnRemiteEliminar", titulo: "Eliminar Area que Remite" }),
+	React.createElement(Ventana, { id: "vtnBeneficiaEliminar", titulo: "Eliminar Area que Beneficia" }),
+	React.createElement(Ventana, { id: "vtnAtencionEliminar", titulo: "Eliminar Departamento Responsable de Atenci\xF3n" })
 ), document.getElementById('ventanaEliminar'));
