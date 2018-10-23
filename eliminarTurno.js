@@ -1,20 +1,21 @@
-function nuevoTurno(e)
+function eliminarTurno(tabla2, vtn)
 {
+	var aux = "select-";
+    aux += vtn;
+	console.log("hola dianis");
 	//e.preventDefault();//evita que se recarge la pagina
 	//var formData = new FormData(document.getElementById("form-vtnTurno"));
-	var vtnTurnoEliminar= document.getElementById("select-vtnTurnoEliminar").value;
-	//var tipo=document.getElementsByTagName("FORM");
-	
-	var tipo=document.getElementsByTagName("FORM");
-	console.log(tipo);
+	console.log(tabla2);
+	console.log(aux); 
+	var idEliminar= document.getElementById(aux).value;
 	console.log("entre");
-	console.log(nom);
+	console.log(idEliminar);
 	
 	$.ajax({
-		url: 'EliminarTipoTurno.php',
+		url: 'eliminarTipoTurno.php',
 		type: 'POST',
 		dataType: 'json',
-		data: {nom1: nom},
+		data: {idEliminar1: idEliminar, tabla1: tabla2},
 		beforeSend: function(){
      	console.log("Se está procesando la informacion ");
     },
@@ -23,12 +24,13 @@ function nuevoTurno(e)
 		/* Se hizo bien 
 		   LIMPIAMOS LOS DATOS DEL FORMULARIO
 		 */ 
-		 console.log("exitoX: "+datos.TipoturnoEliminar);
+		 console.log("exitoX: "+datos.resultado);
 		 //console.log("resultado: "+datos.resultadoX);
         //document.getElementById("form-vtnTurno").reset();
+        consulta_Select(tabla2, vtn);
 	})
 	.fail(function(datos) {
-		console.log("error en "+datos.TipoturnoEliminar);
+		console.log("error en "+datos.resultado);
 		
 	})
 	.always(function() {

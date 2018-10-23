@@ -38,6 +38,8 @@
 
     <!--VALIDAR EL NOMBRE NO SEA EL MISMO-->
     <script src="validar.js"></script>
+
+    <script src="eliminarTurno.js"></script>
     
     
 </head>
@@ -293,6 +295,11 @@ var vtn = null;
     document.getElementById(aux2).value=null;
   }
 
+  function elimina()
+  {
+    eliminarTurno(tabla2, vtn);
+  }
+
 </script>
 
 <script>
@@ -305,9 +312,11 @@ var vtn = null;
 
 <!-- VENTANA MODAL ENLACE -->
     <script src="js/nuevoTurno.js"></script>
+    <script src="eliminarTurno.js"></script>
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
     <script src="js/ventanaModalEliminar-dist.js"></script>
+     
 
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
