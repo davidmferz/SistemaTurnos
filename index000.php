@@ -283,6 +283,7 @@ var vtn = null;
       var valor = document.getElementById(aux).value;
       var nuevo = document.getElementById(aux2).value;
       validar_nombre(aux, aux2, tabla2, vtn);
+      
     }
 
   function limpia()
