@@ -304,6 +304,7 @@ var vtn = null;
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
     <script src="js/ventanaModalEliminar-dist.js"></script>
+     <script src="js/EliminarTurno.js"></script>
 
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
