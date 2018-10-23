@@ -6,12 +6,8 @@ function validar_nombre(aux, aux2, tabla2, vtn)
     console.log(valor);
     console.log(tabla2);
 
-	$(aux2).removeClass("alert-danger");
-	$(aux2).removeClass("alert-success");
-
 	if(nuevo.length <= 1)
 	{
-		$(aux2).addClass("alert-danger");
 		alert("El campo no debe estar vacío");
 	}
 	else
@@ -26,13 +22,11 @@ function validar_nombre(aux, aux2, tabla2, vtn)
 			if(datos.resultado)
 			{
 				console.log("Se repite el nombre");
-				$(aux2).addClass("alert-danger");
 				alert("El nombre se repite");
 			}
 			else
 			{
-				console.log("No se repite el nombre");
-				$(aux2).addClass("alert-success");	
+				console.log("No se repite el nombre");	
 				var llamada = $.ajax({
 			        url:"editar.php",
 			        type:"POST",
@@ -54,6 +48,7 @@ function validar_nombre(aux, aux2, tabla2, vtn)
 			        },
 			        })
 			        .done(function(datos) {
+			        	alert("Se edito con exito");
 			           console.log("exitoX: "+datos.resultado);
 			           consulta_Select(tabla2, vtn);
 			           limpia();
