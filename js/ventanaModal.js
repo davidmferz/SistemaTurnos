@@ -38,10 +38,10 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurno" titulo="Tipo de Recurso" funcion="nuevoTurno"/>
-		<Ventana id="vtnRemite" titulo="Area que Remite"  funcion="enviarRemite()"/>
-		<Ventana id="vtnBeneficia" titulo="Area que Beneficia"  funcion="enviarBeneficia()"/>
-		<Ventana id="vtnAtencion" titulo="Departamento Responsable de Atención" funcion="enviarAtencion()"/>
+		<Ventana id="vtnTurno" titulo="Tipo de Recurso"/>
+		<Ventana id="vtnRemite" titulo="Area que Remite"/>
+		<Ventana id="vtnBeneficia" titulo="Area que Beneficia"/>
+		<Ventana id="vtnAtencion" titulo="Departamento Responsable de Atención"/>
 	</div>, 
 	document.getElementById('ventana')
 );
