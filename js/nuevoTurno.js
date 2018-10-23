@@ -2,8 +2,12 @@ function nuevoTurno(e)
 {
 	//e.preventDefault();//evita que se recarge la pagina
 	//var formData = new FormData(document.getElementById("form-vtnTurno"));
-	var nom= document.getElementById("nombre").value;
+	var auxiliar="text-";
 	var tipo= document.getElementById("idx").value;
+	auxiliar += tipo;
+	var nom= document.getElementById(auxiliar).value;
+	
+	console.log(auxiliar);
 	console.log("el tipo de venatana es: "+tipo);
 	console.log("el nombre que se va a guardar es "+nom);
 	

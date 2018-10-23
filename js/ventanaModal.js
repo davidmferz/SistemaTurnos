@@ -14,8 +14,8 @@ const Ventana = props =>{
 		      	<br/>
 		        <form id={"form-"+props.id}>
 					<div className="form-group">
-						<input type="text" className="form-control" id="nombre" name="nombre" placeholder="Ingrese Nombre"/>
-						<input type="text" id="idx" value={props.id} name="idx"/>
+						<input type="text" className="form-control" id={"text-"+props.id} name="nombre" placeholder="Ingrese Nombre"/>
+						
 					</div>
 				</form>
 		      </div>

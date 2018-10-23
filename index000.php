@@ -35,6 +35,9 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
     <script src="js/altaVentanaModal.js"></script>
+
+    <!--VALIDAR EL NOMBRE NO SEA EL MISMO-->
+    <script src="validar.js"></script>
     
     
 </head>
@@ -75,7 +78,10 @@
     		<a href="#"><img src="img/buscar.png" alt="imagen"></a>
     		<h5>Buscar un turno</h5>
     	</div>
+      <input type="text" id="idx" name="idx" style="display: none">
     </div>
+
+
 
      <!--
     VENTANA MODAL para agregar: 
@@ -97,7 +103,7 @@
     </div>
 
     <!-- DESDE AQUI COMIENZA LA VENTANA MODAL DE LA OPCION DE EDITAR -->
-    <div class="modal fade" id="VentanaModalE" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="VentanaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -136,7 +142,7 @@
         <tr>
           <th scope="row">Tipo de Turno</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno" onclick="consultaAgregar('vtnTurno')">
               <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -156,7 +162,7 @@
         <tr>
           <th scope="row">Area que Remite</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite" onclick="consultaAgregar('vtnRemite')">
               <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -176,7 +182,7 @@
         <tr>
           <th scope="row">Area que Beneficia</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia" onclick="consultaAgregar('vtnBeneficia')">
                 <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -196,7 +202,7 @@
         <tr>
           <th scope="row">Departamento Responsable de Atención</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion" onclick="consultaAgregar('vtnAtencion')">
                 <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -270,33 +276,63 @@ var vtn = null;
 
     function actualiza()
     {
-      console.log("hola");
-      //AQUI ES DONDE SE CARGA LOS DATOS DE LA VENTANA MODAL
-      var valor = document.getElementById("select-vtnTurnoEditar").value;
-      var nuevo = document.getElementById("text-vtnTurnoEditar").innerHTML;
+      var aux = "select-";
+      aux += vtn;
+      var aux2 = "text-";
+      aux2 += vtn;
+      var valor = document.getElementById(aux).value;
+      var nuevo = document.getElementById(aux2).value;
       console.log(valor);
       console.log(nuevo);
-      document.getElementById("modalImagen").innerHTML=`<img src="img/Informacion-128.png" alt="Imagen no econtrada">`; 
-      if(!(nuevo.trim() == ""))
-      {
-          document.getElementById("modalTitle").innerHTML="<h4>¿Esta seguro?<h4>";
-          document.getElementById("modalBody").innerHTML="¿Esta seguro en cambiar <b>"+valor+"</b> a <b>"+nuevo+"</b>";
-          
-          document.getElementById("modalBotones").innerHTML=`
-              <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="cancelarRecursos()">NO, Cancelar
-              </button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" 
-                  onclick="editarRecrusos2('${id}','${nuevo}')">Si, Cambiar
-              </button>
-          `;
-      }
-      else
-      {
-          document.getElementById("modalTitle").innerHTML="¿Estas seguro?";
-          document.getElementById("modalBody").innerHTML="El campo esta vacio, por favor intente de nuevo";
-      }
+      console.log(tabla2);
+      validar_nombre(aux);
+      var llamada = $.ajax({
+        url:"editar.php",
+        type:"POST",
+        dataType:"json",
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        data:{valor1 : valor, nuevo1 : nuevo, tabla1 :  tabla2},
+        beforeSend: function()
+        {
+          var r= confirm("Realmente desea editar el campo\n"+valor+" por "+nuevo);
+          if (r==true) {
+            
+
+          }
+          else
+          {
+            
+            llamada.abort();
+          }
+        },
+        })
+        .done(function(datos) {
+           console.log("exitoX: "+datos.resultado);
+           consulta_Select(tabla2, vtn);
+        })
+        .fail(function(datos) {
+          console.log("error en "+datos.resultado);
+        })
+        .always(function() {
+          console.log("complete");
+      });
     }
 
+  function limpia()
+  {
+    var aux2 = "text-";
+    aux2 += vtn;
+    document.getElementById(aux2).value=null;
+  }
+
+</script>
+
+<script>
+  function consultaAgregar(ventana)
+  {
+    var vent=ventana;
+    document.getElementById("idx").value=vent;
+  }
 </script>
 
 <!-- VENTANA MODAL ENLACE -->
