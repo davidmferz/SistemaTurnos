@@ -84,8 +84,6 @@
       <input type="text" id="idx" name="idx" style="display: none">
     </div>
 
-
-
      <!--
     VENTANA MODAL para agregar: 
             *Tipo de recurso.
@@ -105,7 +103,6 @@
         
     </div>
 
-    
     <table class="table">
       <thead>
         <tr>
@@ -133,8 +130,6 @@
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
-         
-
         </tr>
         <tr>
           <th scope="row">Area que Remite</th>
@@ -194,14 +189,10 @@
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
-
-
         </tr>
       </tbody>
     </table>
-
     </div><!--Aqui termina el container-->
-
 
 <script>
 
@@ -213,32 +204,32 @@ var vtn = null;
       vtn=select;
       var aux = "select-";
       aux += vtn;
-            $.ajax({
-                url:"consulta_Select.php?tabla="+tabla,
-                type:"GET",
-                dataType:"json",
-                cache:false,
-                contentType: false,
-                encode:true,
-                processData: false,
-                beforeSend: function()
-                {
-                     
-                },
-                success: function(datos)
-                {
-                    var t_re=document.getElementById(aux);
-                    t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
-                    for (i in datos) 
-                    {
-                        t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
-                    }
-                },
-                error: function(XMLHttpRequest)
-                {
-                   console.log("error"+XMLHttpRequest); 
-                }
-            });
+      $.ajax({
+          url:"consulta_Select.php?tabla="+tabla,
+          type:"GET",
+          dataType:"json",
+          cache:false,
+          contentType: false,
+          encode:true,
+          processData: false,
+          beforeSend: function()
+          {
+               
+          },
+          success: function(datos)
+          {
+              var t_re=document.getElementById(aux);
+              t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
+              for (i in datos) 
+              {
+                  t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
+              }
+          },
+          error: function(XMLHttpRequest)
+          {
+             console.log("error"+XMLHttpRequest); 
+          }
+      });
     }
 
     function cargar()
@@ -260,7 +251,6 @@ var vtn = null;
       var valor = document.getElementById(aux).value;
       var nuevo = document.getElementById(aux2).value;
       validar_nombre(aux, aux2, tabla2, vtn);
-      
     }
 
   function limpia()
@@ -280,15 +270,10 @@ var vtn = null;
     nuevoTurno(tabla2,vtn);
   }
 
-
-
-
   function consultaAgregar(tabla, vtnm)
   {
-    
     tabla2=tabla;
     vtn=vtnm;
-    //document.getElementById("idx").value=vent;
   }
 </script>
 
@@ -298,8 +283,6 @@ var vtn = null;
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
     <script src="js/ventanaModalEliminar-dist.js"></script>
-     
-
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
