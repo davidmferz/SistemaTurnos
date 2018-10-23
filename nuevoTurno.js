@@ -1,12 +1,13 @@
-function nuevoTurno(e)
+function nuevoTurno(tabla, vtn)
 {
 	//e.preventDefault();//evita que se recarge la pagina
 	//var formData = new FormData(document.getElementById("form-vtnTurno"));
 	var auxiliar="text-";
-	var tipo= document.getElementById("idx").value;
+	//var tipo= document.getElementById("idx").value;
+	var tipo=vtn;
 	auxiliar += tipo;
 	var nom= document.getElementById(auxiliar).value;
-	
+	console.log(tabla);
 	console.log(auxiliar);
 	console.log("el tipo de venatana es: "+tipo);
 	console.log("el nombre que se va a guardar es "+nom);
@@ -17,7 +18,7 @@ function nuevoTurno(e)
 	url: 'validar_nombre.php',
 	type: 'POST',
 	dataType: 'JSON',
-	data: {nombre1: nom, tabla1: tipo},
+	data: {nombre1: nom, tabla1: tabla},
 	beforeSend: function(){
 		console.log("si entre");
 	}
@@ -45,7 +46,7 @@ function nuevoTurno(e)
 				})
 			        .done(function(datos) {
 			           console.log("exitoX: "+datos.resultado);
-			           consulta_Select(tabla2, vtn);
+			           alert("Se agregó correctamente");
 			           limpia();
 			        })
 			        .fail(function(datos) {

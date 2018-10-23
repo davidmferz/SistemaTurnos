@@ -47,7 +47,7 @@ var Ventana = function Ventana(props) {
 					{ className: "modal-footer" },
 					React.createElement(
 						"button",
-						{ type: "button", className: "btn btn-primary", onClick: nuevoTurno },
+						{ type: "button", className: "btn btn-primary", onClick: agregar },
 						"Guardar"
 					),
 					React.createElement(

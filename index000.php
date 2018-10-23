@@ -40,6 +40,7 @@
     <script src="validar.js"></script>
 
     <script src="eliminarTurno.js"></script>
+    <script src="nuevoTurno.js"></script>
     
     
 </head>
@@ -104,33 +105,7 @@
         
     </div>
 
-    <!-- DESDE AQUI COMIENZA LA VENTANA MODAL DE LA OPCION DE EDITAR -->
-    <div class="modal fade" id="VentanaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-Imagen" id="modalImagen" style="text-align: center;">
-                    <!--Esta parte se carga dinamicamente-->
-                    ...
-                </div>
-
-                <div class="modal-body" id="modalBody" style="text-align: justify;">
-                    <!--Esta parte se carga dinamicamente-->
-                    ...
-                </div>
-                <div class="modal-footer" id="modalBotones">
-                    <!--Esta parte se carga dinamicamente-->
-                    ...
-                </div>
-            </div>
-        </div>
-    </div><!--AQUI TERMINA LA VENTANA MODAL DE LA OPCION DE EDITAR-->
-
+    
     <table class="table">
       <thead>
         <tr>
@@ -144,7 +119,7 @@
         <tr>
           <th scope="row">Tipo de Turno</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno" onclick="consultaAgregar('vtnTurno')">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnTurno" onclick="consultaAgregar('tipoturno','vtnTurno')">
               <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -164,7 +139,7 @@
         <tr>
           <th scope="row">Area que Remite</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite" onclick="consultaAgregar('vtnRemite')">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnRemite" onclick="consultaAgregar('arearemite','vtnRemite')">
               <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -184,7 +159,7 @@
         <tr>
           <th scope="row">Area que Beneficia</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia" onclick="consultaAgregar('vtnBeneficia')">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnBeneficia" onclick="consultaAgregar('areabeneficiada','vtnBeneficia')">
                 <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -204,7 +179,7 @@
         <tr>
           <th scope="row">Departamento Responsable de Atención</th>
           <td>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion" onclick="consultaAgregar('vtnAtencion')">
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#vtnAtencion" onclick="consultaAgregar('responsableatencion','vtnAtencion')">
                 <img src="img/agregar.png" alt="Imagen">
             </button>
           </td>
@@ -300,18 +275,25 @@ var vtn = null;
     eliminarTurno(tabla2, vtn);
   }
 
-</script>
+  function agregar(){
+    console.log(tabla2+vtn);
+    nuevoTurno(tabla2,vtn);
+  }
 
-<script>
-  function consultaAgregar(ventana)
+
+
+
+  function consultaAgregar(tabla, vtnm)
   {
-    var vent=ventana;
-    document.getElementById("idx").value=vent;
+    
+    tabla2=tabla;
+    vtn=vtnm;
+    //document.getElementById("idx").value=vent;
   }
 </script>
 
 <!-- VENTANA MODAL ENLACE -->
-    <script src="js/nuevoTurno.js"></script>
+    
     <script src="eliminarTurno.js"></script>
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
