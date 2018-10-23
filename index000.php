@@ -297,9 +297,7 @@ var vtn = null;
 
   function elimina()
   {
-    var aux = "select-";
-      aux += vtn;
-    eliminarTurno(tabla2, aux);
+    eliminarTurno(tabla2, vtn);
   }
 
 </script>

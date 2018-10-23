@@ -18,7 +18,7 @@ const Ventana = props =>{
 						 <option value="0">Seleccione una opcion</option>
 
 						 </select>
-						 <input type="text" id="idx" value={props.id} name="idx"/>
+						
 					</div>
 				</form>
 		      </div>

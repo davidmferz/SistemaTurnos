@@ -46,8 +46,7 @@ var Ventana = function Ventana(props) {
 									{ value: "0" },
 									"Seleccione una opcion"
 								)
-							),
-							React.createElement("input", { type: "text", id: "idx", value: props.id, name: "idx" })
+							)
 						)
 					)
 				),
