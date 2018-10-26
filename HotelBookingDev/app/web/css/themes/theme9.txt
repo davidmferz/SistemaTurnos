@@ -1,4 +1,0 @@
-@CHARSET "UTF-8";
-#pjWrapper select.form-control {
-	background-image: url(app/web/img/frontend/customSelectDropdown.png) !important;
-}
