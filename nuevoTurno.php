@@ -35,6 +35,7 @@
 
     <!--Consulta select-->
     <script src="js/consulta_Select.js"></script>
+    
 
 </head>
 <body>
@@ -162,6 +163,10 @@
                         <label for="exampleFormControlFile1">Documento</label>
                         <input type="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
+
+                    <div>
+                        <button type="button" id="submit" class="btn btn-primary btn-lg btn-block" style="border-radius:0px; background-color: #337ab7; border-color: #337ab7;"  onclick="altaTurno()">Enviar</button>
+                    </div>
                 </form>
 
             </div><!--CARD BODY TERMINA-->
@@ -172,6 +177,7 @@
 
    
      <!--Esta funcion debe de ir despues de jque-->
+    <script src="altaTurno.js"></script>
      <script type="text/javascript">
         $( document ).ready(function() {
             consulta_Select('tipoturno','Turno');
