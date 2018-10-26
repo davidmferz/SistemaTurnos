@@ -1,9 +1,116 @@
-body
+@font-face
 {
-	margin:0px;
+ font-family: 'Metropolis';
+ src: url('../fonts/metropolis/Metropolis-Regular.otf');
+}
+@font-face
+{
+ font-family: 'Metropolis-Bold';
+ src: url('../fonts/metropolis/Metropolis-Bold.otf');
+}
+
+.container
+{
+    width: 95%;
+}
+html, body
+{
+	font-family: Metropolis;
 }
 
 .espacio
 {
     margin:15px 0px;
+}
+
+.container
+{
+	margin-top: 20px;
+}
+
+.panel-heading
+{
+	background-color: #2C5234;
+    border-color: #2C5234;
+}
+
+.panel .panel-primary
+{
+	/*background-color: #2C5234;*/
+    border-color: #2C5234;
+}
+#inicio, #fin
+{
+	    height: 2.3em;
+}
+
+.panel-heading {
+	    font-weight: bold;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #2C5234;
+    border-color: #2C5234;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: rgba(44,82,52,0.8);
+    border-color: #398439;
+}
+
+html body .titulo
+{
+   font-family: 'Roboto Slab', serif;
+}
+
+a
+{
+    text-decoration: none;
+    color:#333;
+}
+
+.centrar
+{
+    text-align: center;
+}
+
+.inp
+{
+    max-width: 100%;
+}
+
+.borde-color
+{
+    border: #9c8412 solid 1px;
+}
+
+
+/*
+Full screen Modal 
+*/
+.fullscreen-modal .modal-dialog {
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .fullscreen-modal .modal-dialog {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .fullscreen-modal .modal-dialog {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .fullscreen-modal .modal-dialog {
+     width: 1170px;
+  }
 }

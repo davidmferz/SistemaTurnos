@@ -24,6 +24,9 @@
     <meta charset="UTF-8">
     <title>SistemaTurnos</title>
 
+    <!-- JQuery-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
     <!--BOOSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -73,7 +76,6 @@
           </div>
           
           <div class="card-body">
-                
                 <form action="" method="">
                     <br>
                     <!--No Folio y No. Documento-->
@@ -168,14 +170,10 @@
                         <button type="button" id="submit" class="btn btn-primary btn-lg btn-block" style="border-radius:0px; background-color: #337ab7; border-color: #337ab7;"  onclick="altaTurno()">Enviar</button>
                     </div>
                 </form>
-
             </div><!--CARD BODY TERMINA-->
         </div><!--CARD TERMINA-->
-
-
     </div><!--CONTAINER TERMINA-->
 
-   
      <!--Esta funcion debe de ir despues de jque-->
     <script src="altaTurno.js"></script>
      <script type="text/javascript">

@@ -7,15 +7,13 @@
 	}
     else
     {
-        switch ($_SESSION["user"]) 
-        {
-            case 0://Direccion de Obra Universitara
-                $bienvenido="Administrador";  
-            break;
-
-        }
+      switch ($_SESSION["user"]) 
+      {
+        case 0://Direccion de Obra Universitara
+          $bienvenido="Administrador";  
+        break;
+      }
     }
-	
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +78,7 @@
     		<h5>Agregar un turno</h5>
     	</div>
     	<div class="col-md-6 text-center">
-    		<a href="#"><img src="img/buscar.png" alt="imagen"></a>
+    		<a href="consultar.php"><img src="img/buscar.png" alt="imagen"></a>
     		<h5>Buscar un turno</h5>
     	</div>
       <input type="text" id="idx" name="idx" style="display: none">
@@ -247,9 +245,7 @@ var vtn = null;
   }
 </script>
 
-<!-- VENTANA MODAL ENLACE -->
-    
-    <script src="eliminarTurno.js"></script>
+    <!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
     <script src="js/ventanaModalEliminar-dist.js"></script>
