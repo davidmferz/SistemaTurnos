@@ -78,7 +78,7 @@
     		<h5>Agregar un turno</h5>
     	</div>
     	<div class="col-md-6 text-center">
-    		<a href="#"><img src="img/buscar.png" alt="imagen"></a>
+    		<a href="consultar.php"><img src="img/buscar.png" alt="imagen"></a>
     		<h5>Buscar un turno</h5>
     	</div>
       <input type="text" id="idx" name="idx" style="display: none">

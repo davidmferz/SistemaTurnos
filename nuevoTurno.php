@@ -75,51 +75,6 @@
           </div>
           
           <div class="card-body">
-<<<<<<< HEAD
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Tipos de Turnos</label>
-                    <select class="form-control" id="tipoturno">
-                        <option value="0">Seleccione una opcion</option>
-                        <option value="1">Sistema Unico de Gestion</option>
-                        <option value="2">Oficio de Espacio Academico</option>
-                        <option value="3">Oficio Externo</option>
-                        <option value="4">Indicacion Directa</option>
-                        <option value="2">Secretaria de Administracion</option>
-                    </select>
-                </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Area que Remite</label>
-                <select class="form-control" id="arearemite">
-                  <option value="0">Seleccione una opcion</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Area que Beneficia</label>
-                <select class="form-control" id="areabeneficiada">
-                  <option value="0">Seleccione una opcion</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Departamento responsable de atención</label>
-                <select class="form-control" id="responsableatencion">
-                  <option value="0">Seleccione una opcion</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Instrucciones de Atención</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-             
-             <div class="form-group">
-                <label for="exampleFormControlFile1">Documento</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-=======
-                
                 <form action="" method="">
                     <br>
                     <!--No Folio y No. Documento-->
@@ -210,65 +165,10 @@
                         <input type="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                 </form>
->>>>>>> 7861b72eb1d989b7f45e50918b9c28a97364eb83
-
             </div><!--CARD BODY TERMINA-->
         </div><!--CARD TERMINA-->
-
-
     </div><!--CONTAINER TERMINA-->
 
-<<<<<<< HEAD
-<script>
-    
-    $(document).ready(function()
-    {
-        consulta_Select("tipoturno", "tipoturno");
-        consulta_Select("arearemite", "arearemite");
-        consulta_Select("areabeneficiada", "areabeneficiada");
-        consulta_Select("responsableatencion", "responsableatencion");
-    });
-
-    function consulta_Select(tabla, select)
-    {
-      $.ajax({
-          url:"consulta_Select.php?tabla="+tabla,
-          type:"GET",
-          dataType:"json",
-          cache:false,
-          contentType: false,
-          encode:true,
-          processData: false,
-          beforeSend: function()
-          {
-               
-          },
-          success: function(datos)
-          {
-              var t_re=document.getElementById(select);
-              t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
-              for (i in datos) 
-              {
-                  t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
-              }
-          },
-          error: function(XMLHttpRequest)
-          {
-             console.log("error"+XMLHttpRequest); 
-          }
-      });
-    }
-
-</script>
-    
-
-    <!-- BOOSTRAP Y JQUERY -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-=======
-   
      <!--Esta funcion debe de ir despues de jque-->
      <script type="text/javascript">
         $( document ).ready(function() {
@@ -280,7 +180,6 @@
     </script>
 
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
->>>>>>> 7861b72eb1d989b7f45e50918b9c28a97364eb83
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
