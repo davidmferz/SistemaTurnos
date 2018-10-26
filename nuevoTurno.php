@@ -23,6 +23,9 @@
     <meta charset="UTF-8">
     <title>SistemaTurnos</title>
 
+    <!-- JQuery-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
     <!--BOOSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -67,7 +70,7 @@
           <div class="card-body">
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Tipos de Turnos</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="tipoturno">
                         <option value="0">Seleccione una opcion</option>
                         <option value="1">Sistema Unico de Gestion</option>
                         <option value="2">Oficio de Espacio Academico</option>
@@ -79,21 +82,21 @@
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Area que Remite</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="arearemite">
                   <option value="0">Seleccione una opcion</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Area que Beneficia</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="areabeneficiada">
                   <option value="0">Seleccione una opcion</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Departamento responsable de atención</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="responsableatencion">
                   <option value="0">Seleccione una opcion</option>
                 </select>
               </div>
@@ -114,7 +117,47 @@
 
     </div><!--CONTAINER TERMINA-->
 
+<script>
+    
+    $(document).ready(function()
+    {
+        consulta_Select("tipoturno", "tipoturno");
+        consulta_Select("arearemite", "arearemite");
+        consulta_Select("areabeneficiada", "areabeneficiada");
+        consulta_Select("responsableatencion", "responsableatencion");
+    });
 
+    function consulta_Select(tabla, select)
+    {
+      $.ajax({
+          url:"consulta_Select.php?tabla="+tabla,
+          type:"GET",
+          dataType:"json",
+          cache:false,
+          contentType: false,
+          encode:true,
+          processData: false,
+          beforeSend: function()
+          {
+               
+          },
+          success: function(datos)
+          {
+              var t_re=document.getElementById(select);
+              t_re.innerHTML="<option value='0'>Seleccione una opción</option>";
+              for (i in datos) 
+              {
+                  t_re.innerHTML +=`<option value='${datos[i].name}'>${datos[i].name}</option>`;
+              }
+          },
+          error: function(XMLHttpRequest)
+          {
+             console.log("error"+XMLHttpRequest); 
+          }
+      });
+    }
+
+</script>
     
 
     <!-- BOOSTRAP Y JQUERY -->

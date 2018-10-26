@@ -7,15 +7,13 @@
 	}
     else
     {
-        switch ($_SESSION["user"]) 
-        {
-            case 0://Direccion de Obra Universitara
-                $bienvenido="Administrador";  
-            break;
-
-        }
+      switch ($_SESSION["user"]) 
+      {
+        case 0://Direccion de Obra Universitara
+          $bienvenido="Administrador";  
+        break;
+      }
     }
-	
 ?>
 
 <!DOCTYPE html>
@@ -277,9 +275,7 @@ var vtn = null;
   }
 </script>
 
-<!-- VENTANA MODAL ENLACE -->
-    
-    <script src="eliminarTurno.js"></script>
+    <!-- VENTANA MODAL ENLACE -->
     <script src="js/ventanaModal-dist.js"></script>
     <script src="js/ventanaModalEditar-dist.js"></script>
     <script src="js/ventanaModalEliminar-dist.js"></script>
