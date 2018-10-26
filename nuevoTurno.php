@@ -15,6 +15,7 @@
 
         }
     }
+    //modificacion
 ?>
 
 <!DOCTYPE html>
@@ -164,7 +165,7 @@
                     </div>
                     <br>
                     <br>
-                    
+
                     <!--TIPO DE TURNO-->
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Tipos de Turnos</label>
