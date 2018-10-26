@@ -71,43 +71,97 @@
           </div>
           
           <div class="card-body">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Tipos de Turnos</label>
-                    <select class="form-control" id="select-Turno">
-                        <option value="0">Seleccione una opcion</option>
-                    </select>
-                </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Area que Remite</label>
-                <select class="form-control" id="select-Remite">
-                  <option value="0">Seleccione una opcion</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Area que Beneficia</label>
-                <select class="form-control" id="select-Beneficia">
-                  <option value="0">Seleccione una opcion</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Departamento responsable de atención</label>
-                <select class="form-control" id="select-Atencion">
-                  <option value="0">Seleccione una opcion</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Instrucciones de Atención</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-             
-             <div class="form-group">
-                <label for="exampleFormControlFile1">Documento</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
+                
+                <form action="" method="">
+                    <br>
+                    <!--No Folio y No. Documento-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label for="folio" class="col-sm-4 col-form-label" style="padding-right: 0px;">No. Folio</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" name="folio" id="folio" placeholder="No. Folio">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label for="documento" class="col-sm-4 col-form-label" style="padding-right: 0px;">No. Documento</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" name="documento" id="documento" placeholder="No. Documento">
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <!-- FECHA QUE SE RECIBE  Y FECHA DEL DOCUMENTO-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label for="fechaRecibe" class="col-sm-4 col-form-label" style="padding-right: 0px;">Fecha que se Recibe</label>
+                              <div class="col-sm-8">
+                                <input type="date" class="form-control" name="fechaRecibe" id="fechaRecibe">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                              <label for="fechaDocumento" class="col-sm-4 col-form-label" style="padding-right: 0px;">Fecha del Documento</label>
+                              <div class="col-sm-8">
+                                <input type="date" class="form-control" name="fechaDocumento" id="fechaDocumento">
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    
+                    <!--TIPO DE TURNO-->
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Tipos de Turnos</label>
+                        <select class="form-control" id="select-Turno">
+                            <option value="0">Seleccione una opcion</option>
+                        </select>
+                    </div>
+                    
+                    <!--AREA QUE REMITE-->
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Area que Remite</label>
+                        <select class="form-control" id="select-Remite">
+                          <option value="0">Seleccione una opcion</option>
+                        </select>
+                    </div>
+                                 
+                    <!--AREA QUE BENEFICIA-->
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Area que Beneficia</label>
+                        <select class="form-control" id="select-Beneficia">
+                          <option value="0">Seleccione una opcion</option>
+                        </select>
+                    </div>
+                                
+                    <!--DEPARTAMENTO RESPONSABLE DE ATENCION-->
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Departamento responsable de atención</label>
+                        <select class="form-control" id="select-Atencion">
+                          <option value="0">Seleccione una opcion</option>
+                        </select>
+                    </div>
+                                
+                    <!--INSTRUCCIONES DE ATENCION-->
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Instrucciones de Atención</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                                 
+                    <!--DOCUMENTO-->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Documento</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                </form>
 
             </div><!--CARD BODY TERMINA-->
         </div><!--CARD TERMINA-->
