@@ -9,7 +9,7 @@ function altaTurno2()
     var arearemite = document.getElementById('select-Remite').value;
     var arearbeneficia = document.getElementById('select-Beneficia').value;
     var ratencion = document.getElementById('select-Atencion').value;
-    var iatencion = document.getElementById('exampleFormControlTextarea1').value;
+    var iatencion = document.getElementById('instrucciones').value;
     //var druta = document.getElementById('');
     var formData = new FormData(document.getElementById("formTurno"));
 
