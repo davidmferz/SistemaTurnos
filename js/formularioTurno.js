@@ -88,7 +88,7 @@ const FormularioTurnos = props =>{
                     
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1">Instrucciones de Atención</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea className="form-control" id="instrucciones" rows="3"></textarea>
                     </div>
                                  
                     

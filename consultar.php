@@ -215,7 +215,7 @@
     </div>
 
     <!--DESDE AQUI COMIENZA EL FORMULARIO SE CARGA CON REACT-->
-    <div id="panel-principal-x" style="display: none;">
+    <div id="formularioTurno" style="display: none;">
 
     </div><!--AQUI TERMINA EL FORMULARIO-->
     
@@ -223,6 +223,10 @@
         
         $( document ).ready(function() {
             consultar();
+            consulta_Select("tipoturno", "select-Turno");
+            consulta_Select("arearemite", "select-Remite");
+            consulta_Select("areaBeneficia", "select-Beneficia");
+            consulta_Select("responsableatencion", "select-Atencion");
         });
 
     //CUANDO EL USUARIO ELIJE UN TURNO
@@ -287,7 +291,7 @@
 
     function llenar(id)
     {
-        $("#panel-principal-x").css("display", "block");
+        $("#formularioTurno").css("display", "block");
         
         $("input[type='text']").prop('disabled', "true");
         $("input[type='textarea']").prop('disabled', "true");
@@ -296,6 +300,7 @@
         $("input[type='file']").prop('disabled', "true");
         $("select").prop('disabled', "true");
         $("button[type='button']").css('display', "none");
+        $("textarea").prop('disabled', "true");
         llenarF(id);
     }
 
@@ -524,11 +529,15 @@
         }
     });
 
+    function agregarTurno2()
+    {
+
+    }
 
 
     </script>
     
-    <!--LLAMA A QUE SE PINTE EL FORMULARIO DE OBRAS -->
+    <!--LLAMA A QUE SE PINTE EL FORMULARIO -->
     <script src="js/formularioTurno-dist.js"></script>
 
     <!--SE LLENA EL FORMULARIO -->

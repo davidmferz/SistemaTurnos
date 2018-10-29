@@ -182,7 +182,7 @@ var FormularioTurnos = function FormularioTurnos(props) {
                             { htmlFor: "exampleFormControlTextarea1" },
                             "Instrucciones de Atenci\xF3n"
                         ),
-                        React.createElement("textarea", { className: "form-control", id: "exampleFormControlTextarea1", rows: "3" })
+                        React.createElement("textarea", { className: "form-control", id: "instrucciones", rows: "3" })
                     ),
                     React.createElement(
                         "div",
