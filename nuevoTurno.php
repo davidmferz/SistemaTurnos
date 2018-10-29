@@ -36,9 +36,14 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
 
+    <!--INSTALACION DE REACT -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
     <!--Consulta select-->
     <script src="js/consulta_Select.js"></script>
-    
+
+      
 
 </head>
 <body>
@@ -69,110 +74,9 @@
         </div>
     </div>
     
-    <div class="container mt-5">
-        <div class="card mt-2">
-          <div class="card-header text-center">
-            Agregar un nuevo Turno
-          </div>
-          
-          <div class="card-body">
-                <form action="" method="">
-                    <br>
-                    <!--No Folio y No. Documento-->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                              <label for="folio" class="col-sm-4 col-form-label" style="padding-right: 0px;">No. Folio</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" name="folio" id="folio" placeholder="No. Folio">
-                              </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                              <label for="documento" class="col-sm-4 col-form-label" style="padding-right: 0px;">No. Documento</label>
-                              <div class="col-sm-8">
-                                <input type="text" class="form-control" name="documento" id="documento" placeholder="No. Documento">
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <br>
-                    <!-- FECHA QUE SE RECIBE  Y FECHA DEL DOCUMENTO-->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                              <label for="fechaRecibe" class="col-sm-4 col-form-label" style="padding-right: 0px;">Fecha que se Recibe</label>
-                              <div class="col-sm-8">
-                                <input type="date" class="form-control" name="fechaRecibe" id="fechaRecibe">
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                              <label for="fechaDocumento" class="col-sm-4 col-form-label" style="padding-right: 0px;">Fecha del Documento</label>
-                              <div class="col-sm-8">
-                                <input type="date" class="form-control" name="fechaDocumento" id="fechaDocumento">
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-
-                    <!--TIPO DE TURNO-->
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Tipos de Turnos</label>
-                        <select class="form-control" id="select-Turno">
-                            <option value="0">Seleccione una opcion</option>
-                        </select>
-                    </div>
-                    
-                    <!--AREA QUE REMITE-->
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Area que Remite</label>
-                        <select class="form-control" id="select-Remite">
-                          <option value="0">Seleccione una opcion</option>
-                        </select>
-                    </div>
-                                 
-                    <!--AREA QUE BENEFICIA-->
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Area que Beneficia</label>
-                        <select class="form-control" id="select-Beneficia">
-                          <option value="0">Seleccione una opcion</option>
-                        </select>
-                    </div>
-                                
-                    <!--DEPARTAMENTO RESPONSABLE DE ATENCION-->
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Departamento responsable de atención</label>
-                        <select class="form-control" id="select-Atencion">
-                          <option value="0">Seleccione una opcion</option>
-                        </select>
-                    </div>
-                                
-                    <!--INSTRUCCIONES DE ATENCION-->
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Instrucciones de Atención</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                                 
-                    <!--DOCUMENTO-->
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Documento</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
-
-                    <div>
-                        <button type="button" id="submit" class="btn btn-primary btn-lg btn-block" style="border-radius:0px; background-color: #337ab7; border-color: #337ab7;"  onclick="altaTurno()">Enviar</button>
-                    </div>
-                </form>
-            </div><!--CARD BODY TERMINA-->
-        </div><!--CARD TERMINA-->
-    </div><!--CONTAINER TERMINA-->
+    <div id="formularioTurno">
+        
+    </div>
 
      <!--Esta funcion debe de ir despues de jque-->
     <script src="altaTurno.js"></script>
@@ -190,5 +94,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     
+     <!--FORMULARIO DE NUEVO TURNO-->
+    <script src="js/formularioTurno-dist.js"></script> 
 </body>
 </html>
