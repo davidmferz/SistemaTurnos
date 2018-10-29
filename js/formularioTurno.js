@@ -7,7 +7,7 @@ const FormularioTurnos = props =>{
           </div>
           
           <div className="card-body">
-                <form id="formTurno" enctype="multipart/form-data">
+                <form id="formTurno" encType="multipart/form-data">
                     <br/>
                    
                     <div className="row">

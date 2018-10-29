@@ -17,7 +17,7 @@ var FormularioTurnos = function FormularioTurnos(props) {
                 { className: "card-body" },
                 React.createElement(
                     "form",
-                    { id: "formTurno", enctype: "multipart/form-data" },
+                    { id: "formTurno", encType: "multipart/form-data" },
                     React.createElement("br", null),
                     React.createElement(
                         "div",

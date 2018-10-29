@@ -81,11 +81,18 @@
 
 
      <!--Esta funcion debe de ir despues de jque-->
-    <script src="agregarTurno2.js"></script>
+    <script src="altaTurno2.js"></script>
+    
+    <script>
+        function agregarTurno2()
+        {
+            altaTurno2();
+        }
+    </script>
 
     <script>
 
-    $("#miFormTurno").on("submit", function(e)//FUNCION AJAX PARA DAR DE ALTA UN NUEVO REPORTE
+    /*$("#miFormTurno").on("submit", function(e)//FUNCION AJAX PARA DAR DE ALTA UN NUEVO REPORTE
     {
 
         e.preventDefault();//evita que se recarge la pagina
@@ -196,6 +203,7 @@
         });
         
     });
+    */
     </script>
 
      <script type="text/javascript">
