@@ -7,7 +7,7 @@ const FormularioTurnos = props =>{
           </div>
           
           <div className="card-body">
-                <form action="" method="">
+                <form id="formTurno" enctype="multipart/form-data">
                     <br/>
                    
                     <div className="row">
@@ -94,11 +94,11 @@ const FormularioTurnos = props =>{
                     
                     <div className="form-group">
                         <label htmlFor="exampleFormControlFile1">Documento</label>
-                        <input type="file" className="form-control-file" id="exampleFormControlFile1"/>
+                        <input type="file" className="form-control-file" id="archivo" name="archivo"/>
                     </div>
 
                     <div>
-                        <button type="button" id="submit" className="btn btn-primary btn-lg btn-block">Enviar</button>
+                        <button type="button" id="submit" className="btn btn-primary btn-lg btn-block" onClick={agregarTurno2}>Enviar</button>
                     </div>
                 </form>
             </div>

@@ -81,7 +81,7 @@
 
 
      <!--Esta funcion debe de ir despues de jque-->
-    <script src="altaTurno.js"></script>
+    <script src="agregarTurno2.js"></script>
 
     <script>
 

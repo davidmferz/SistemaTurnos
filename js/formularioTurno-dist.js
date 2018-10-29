@@ -17,7 +17,7 @@ var FormularioTurnos = function FormularioTurnos(props) {
                 { className: "card-body" },
                 React.createElement(
                     "form",
-                    { action: "", method: "" },
+                    { id: "formTurno", enctype: "multipart/form-data" },
                     React.createElement("br", null),
                     React.createElement(
                         "div",
@@ -192,14 +192,14 @@ var FormularioTurnos = function FormularioTurnos(props) {
                             { htmlFor: "exampleFormControlFile1" },
                             "Documento"
                         ),
-                        React.createElement("input", { type: "file", className: "form-control-file", id: "exampleFormControlFile1" })
+                        React.createElement("input", { type: "file", className: "form-control-file", id: "archivo", name: "archivo" })
                     ),
                     React.createElement(
                         "div",
                         null,
                         React.createElement(
                             "button",
-                            { type: "button", id: "submit", className: "btn btn-primary btn-lg btn-block" },
+                            { type: "button", id: "submit", className: "btn btn-primary btn-lg btn-block", onClick: agregarTurno2 },
                             "Enviar"
                         )
                     )
