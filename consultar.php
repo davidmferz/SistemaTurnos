@@ -39,6 +39,12 @@
     <!--Consulta select-->
     <script src="js/consulta_Select.js"></script>
 
+    <!--INSTALACION DE REACT JS-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script>var Sid = null;</script>
+
 </head>
 <body>
 
@@ -86,7 +92,7 @@
                         <option value="1">Tipo de Turno</option>
                         <option value="2">Área que Remite</option>
                         <option value="3">Área que beneficia</option>
-                        <option value="4">Departamento</option>
+                        <option value="4">Departamento Responsable de Atención</option>
                         <option value="5">No. de Folio</option>
                         <option value="6">No. de documento</option>
                     </select>
@@ -147,17 +153,17 @@
                 </div>
             </div>
 
-            <!--DEPARTAMENTO-->
+            <!--DEPARTAMENTO RESPONSABLE DE ATENCIÓN-->
             <div class="row animated" id="capa4" style="display: none;margin:15px;">
                 <div class="col-md-12" style="color: #1976d2">
-                    <h2>Departamento</h2>
+                    <h2>Departamento Responsable de Atención</h2>
                 </div>
                 <div class="col-md-8 form-group">
                     <div class="input-group">
                         <span class="input-group-addon">
                             <span class="fa fa-building-o"></span>
                         </span>
-                        <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Ingrese el Departamento" required="Campo obligatorio" maxlength="200">
+                        <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Ingrese el Departamento Responsable de Atención" required="Campo obligatorio" maxlength="200">
                     </div>
                 </div>
                 <div class="col-md-4" style="text-align: right;">
@@ -281,20 +287,16 @@
 
     function llenar(id)
     {
-        /*$("#panel-principal-x").css("display", "block");
+        $("#panel-principal-x").css("display", "block");
         
-        $("input[type='checkbox']").prop('disabled', "true");
         $("input[type='text']").prop('disabled', "true");
         $("input[type='textarea']").prop('disabled', "true");
         $("input[type='number']").prop('disabled', "true");
         $("input[type='date']").prop('disabled', "true");
         $("input[type='file']").prop('disabled', "true");
-        $("textarea").prop('disabled', "true");
         $("select").prop('disabled', "true");
         $("button[type='button']").css('display', "none");
-        $("button[type='submit']").css('display', "none");
-        $('#btnEnviar').css('display', "none");
-        llenar(id);*/
+        llenarF(id);
     }
 
     $(opc_buscar).change(function()//PARA MOSTRAR EL FITRO DE BUSQUEDA SELECCIONADO
@@ -526,5 +528,11 @@
 
     </script>
     
+    <!--LLAMA A QUE SE PINTE EL FORMULARIO DE OBRAS -->
+    <script src="js/formularioTurno-dist.js"></script>
+
+    <!--SE LLENA EL FORMULARIO -->
+    <script src="js/llenarFormularioTurno.js"></script>
+
 </body>
 </html>
