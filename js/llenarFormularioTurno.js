@@ -35,16 +35,16 @@ function llenarF(id)
             $("#archivo").val(datos.documentoRuta);
 
             //Llenar los select de tipos de turnos
-            $("#select-Turno option[value="+datos.tipoTurno+"]").attr("selected",true);
+            $("#select-Turno").val(datos.tipoTurno).attr("selected",true);
 
             //Llenar los select de area que remite
-            $("#select-Remite option[value="+datos.areaRemite+"]").attr("selected",true);
+            $("#select-Remite").val(datos.areaRemite).attr("selected",true);
             
             //Llenar los select de area que beneficia
-            $("#select-Beneficia option[value="+datos.areaBeneficia+"]").attr("selected",true);
+            $("#select-Beneficia").val(datos.areaBeneficia).attr("selected",true);
             
             //Llenar los select de departamento responsable de atencion
-            $("#select-Atencion option[value="+datos.responsableAtencion+"]").attr("selected",true);
+            $("#select-Atencion").val(datos.responsableAtencion).attr("selected",true);
 
             /*
             //ARCHIVO: EmpresaContrato.pdf

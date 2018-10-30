@@ -235,10 +235,10 @@
             consulta_Select("arearemite", "areaRemite");
             consulta_Select("areabeneficiada", "areaBeneficia");
             consulta_Select("responsableatencion", "departamento");
-            /*consulta_Select("tipoturno", "select-Turno");
+            consulta_Select("tipoturno", "select-Turno");
             consulta_Select("arearemite", "select-Remite");
-            consulta_Select("areaBeneficia", "select-Beneficia");
-            consulta_Select("responsableatencion", "select-Atencion");*/
+            consulta_Select("areabeneficiada", "select-Beneficia");
+            consulta_Select("responsableatencion", "select-Atencion");
         });
 
     //CUANDO EL USUARIO ELIJE UN TURNO
