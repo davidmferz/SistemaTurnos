@@ -36,6 +36,6 @@
 	}
 	catch (Exception $e)
 	{
-		echo "Erro: ".mysqli_error($con);
+		echo "Error: ".mysqli_error($con);
 	};
 ?>

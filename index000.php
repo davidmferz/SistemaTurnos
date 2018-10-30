@@ -121,12 +121,12 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','vtnTurnoEditar')" data-toggle="modal" data-target="#vtnTurnoEditar">
+            <button type="button" class="btn btn-link" onclick="consulta('tipoturno','vtnTurnoEditar')" data-toggle="modal" data-target="#vtnTurnoEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('tipoturno','vtnTurnoEliminar')" data-toggle="modal" data-target="#vtnTurnoEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta('tipoturno','vtnTurnoEliminar')" data-toggle="modal" data-target="#vtnTurnoEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -139,13 +139,13 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('arearemite','vtnRemiteEditar')" data-toggle="modal" data-target="#vtnRemiteEditar">
+            <button type="button" class="btn btn-link" onclick="consulta('arearemite','vtnRemiteEditar')" data-toggle="modal" data-target="#vtnRemiteEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
 
            <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('arearemite','vtnRemiteEliminar')" data-toggle="modal" data-target="#vtnRemiteEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta('arearemite','vtnRemiteEliminar')" data-toggle="modal" data-target="#vtnRemiteEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -159,13 +159,13 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('areabeneficiada','vtnBeneficiaEditar')" data-toggle="modal" data-target="#vtnBeneficiaEditar">
+            <button type="button" class="btn btn-link" onclick="consulta('areabeneficiada','vtnBeneficiaEditar')" data-toggle="modal" data-target="#vtnBeneficiaEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
 
             <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('areabeneficiada','vtnBeneficiaEliminar')" data-toggle="modal" data-target="#vtnBeneficiaEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta('areabeneficiada','vtnBeneficiaEliminar')" data-toggle="modal" data-target="#vtnBeneficiaEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -179,13 +179,13 @@
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('responsableatencion','vtnAtencionEditar')" data-toggle="modal" data-target="#vtnAtencionEditar">
+            <button type="button" class="btn btn-link" onclick="consulta('responsableatencion','vtnAtencionEditar')" data-toggle="modal" data-target="#vtnAtencionEditar">
               <img src="img/editar.png" alt="Imagen">
             </button>
           </td>
           <!--elim-->
           <td>
-            <button type="button" class="btn btn-link" onclick="consulta_Select('responsableatencion','vtnAtencionEliminar')" data-toggle="modal" data-target="#vtnAtencionEliminar">
+            <button type="button" class="btn btn-link" onclick="consulta('responsableatencion','vtnAtencionEliminar')" data-toggle="modal" data-target="#vtnAtencionEliminar">
               <img src="img/eliminar_32.png" alt="Imagen">
             </button>
           </td>
@@ -199,27 +199,35 @@
 var tabla2 = null;
 var vtn = null;
   
+  function consulta(tabla,select)
+  {
+    tabla2 = tabla;
+    vtn = select;
+    var aux = "select-";
+    aux += vtn;
+    consulta_Select(tabla,aux);
+  }
 
-    function cargar()
-    {
-      var aux = "select-";
-      aux += vtn;
-      var aux2 = "text-";
-      aux2 += vtn;
-      var dato = document.getElementById(aux).value;
-      document.getElementById(aux2).value=dato;
-    }
+  function cargar()
+  {
+    var aux = "select-";
+    aux += vtn;
+    var aux2 = "text-";
+    aux2 += vtn;
+    var dato = document.getElementById(aux).value;
+    document.getElementById(aux2).value=dato;
+  }
 
-    function actualiza()
-    {
-      var aux = "select-";
-      aux += vtn;
-      var aux2 = "text-";
-      aux2 += vtn;
-      var valor = document.getElementById(aux).value;
-      var nuevo = document.getElementById(aux2).value;
-      validar_nombre(aux, aux2, tabla2, vtn);
-    }
+  function actualiza()
+  {
+    var aux = "select-";
+    aux += vtn;
+    var aux2 = "text-";
+    aux2 += vtn;
+    var valor = document.getElementById(aux).value;
+    var nuevo = document.getElementById(aux2).value;
+    validar_nombre(aux, aux2, tabla2, vtn);
+  }
 
   function limpia()
   {

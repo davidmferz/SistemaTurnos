@@ -91,10 +91,10 @@
                         <option value="0">Seleccionar una opción</option>
                         <option value="1">Tipo de Turno</option>
                         <option value="2">Área que Remite</option>
-                        <option value="3">Área que beneficia</option>
+                        <option value="3">Área que Beneficia</option>
                         <option value="4">Departamento Responsable de Atención</option>
                         <option value="5">No. de Folio</option>
-                        <option value="6">No. de documento</option>
+                        <option value="6">No. de Documento</option>
                     </select>
                 </div>
             </div>
@@ -109,7 +109,9 @@
                         <span class="input-group-addon">
                             <span class="fa fa-building-o"></span>
                         </span>
-                        <input type="text" class="form-control" id="tipoTurno" name="tipoTurno" placeholder="Ingresa el Tipo de Turno" required="Campo obligatorio" maxlength="200">
+                        <select class="form-control form-control-lg" id="tipoTurno" name="tipoTurno" onchange="">
+                        <option value="0">Seleccionar una opción</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4" style="text-align: right;">
@@ -127,7 +129,9 @@
                         <span class="input-group-addon">
                             <span class="fa fa-building-o"></span>
                         </span>
-                        <input type="text" class="form-control" id="areaRemite" name="areaRemite" placeholder="Ingresa el Área que Remite" required="Campo obligatorio" maxlength="200">
+                        <select class="form-control form-control-lg" id="areaRemite" name="areaRemite">
+                        <option value="0">Seleccionar una opción</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4" style="text-align: right;">
@@ -145,7 +149,9 @@
                         <span class="input-group-addon">
                             <span class="fa fa-building-o"></span>
                         </span>
-                        <input type="text" class="form-control" id="areaBeneficia" name="areaBeneficia" placeholder="Ingrese Área que Beneficia" required="Campo obligatorio" maxlength="200">
+                        <select class="form-control form-control-lg" id="areaBeneficia" name="areaBeneficia">
+                        <option value="0">Seleccionar una opción</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4" style="text-align: right;">
@@ -163,7 +169,9 @@
                         <span class="input-group-addon">
                             <span class="fa fa-building-o"></span>
                         </span>
-                        <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Ingrese el Departamento Responsable de Atención" required="Campo obligatorio" maxlength="200">
+                        <select class="form-control form-control-lg" id="departamento" name="departamento">
+                        <option value="0">Seleccionar una opción</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4" style="text-align: right;">
@@ -223,10 +231,14 @@
         
         $( document ).ready(function() {
             consultar();
-            consulta_Select("tipoturno", "select-Turno");
+            consulta_Select("tipoturno", "tipoTurno");
+            consulta_Select("arearemite", "areaRemite");
+            consulta_Select("areabeneficiada", "areaBeneficia");
+            consulta_Select("responsableatencion", "departamento");
+            /*consulta_Select("tipoturno", "select-Turno");
             consulta_Select("arearemite", "select-Remite");
             consulta_Select("areaBeneficia", "select-Beneficia");
-            consulta_Select("responsableatencion", "select-Atencion");
+            consulta_Select("responsableatencion", "select-Atencion");*/
         });
 
     //CUANDO EL USUARIO ELIJE UN TURNO
@@ -446,7 +458,7 @@
     }
 
      //LIKE TIPO DE TURNO
-    $(document).on('keyup','#tipoTurno', function(){
+    $(document).on('change','#tipoTurno', function(){
         var valor = $(this).val();
         var idC = "";
         if(valor != "")
@@ -460,7 +472,7 @@
     });
 
     //LIKE ÁREA QUE REMITE
-    $(document).on('keyup','#areaRemite', function(){
+    $(document).on('change','#areaRemite', function(){
         var valor = $(this).val();
         var idC = "";
         if(valor != "")
@@ -474,7 +486,7 @@
     });
 
     //LIKE ÁREA QUE BENEFICIA
-    $(document).on('keyup','#areaBeneficia', function(){
+    $(document).on('change','#areaBeneficia', function(){
         var valor = $(this).val();
         var idC = "";
         if(valor != "")
@@ -488,7 +500,7 @@
     });
 
     //LIKE DEPARTAMENTO
-    $(document).on('keyup','#departamento', function(){
+    $(document).on('change','#departamento', function(){
         var valor = $(this).val();
         var idC = "";
         if(valor != "")

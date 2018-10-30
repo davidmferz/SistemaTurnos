@@ -208,10 +208,10 @@
 
      <script type="text/javascript">
         $( document ).ready(function() {
-            consulta_Select('tipoturno','Turno');
-            consulta_Select('arearemite','Remite');
-            consulta_Select('areabeneficiada','Beneficia');
-            consulta_Select('responsableatencion','Atencion');
+            consulta_Select('tipoturno','select-Turno');
+            consulta_Select('arearemite','select-Remite');
+            consulta_Select('areabeneficiada','select-Beneficia');
+            consulta_Select('responsableatencion','select-Atencion');
         });
     </script>
 

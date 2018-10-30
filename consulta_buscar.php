@@ -21,14 +21,14 @@
 				INNER JOIN arearemite ON turno.idAreaRemite = arearemite.Id
 				INNER JOIN responsableatencion ON turno.idResponsableAtencion = responsableatencion.Id
 				INNER JOIN tipoturno ON turno.idTipoTurno = tipoturno.Id
-				WHERE tipoturno.nombre LIKE '%".$q."%' ORDER BY fechaRecibe DESC";
+				WHERE tipoturno.nombre = '".$q."' ORDER BY fechaRecibe DESC";
 	 	 	break;
 
 	 	 	case '2':
 	 	 		$query  = "SELECT turno.id, fechaRecibe, fechaDocumento, arearemite.nombre AS nomrem, responsableatencion.nombre AS nomat FROM turno
 				INNER JOIN arearemite ON turno.idAreaRemite = arearemite.Id
 				INNER JOIN responsableatencion ON turno.idResponsableAtencion = responsableatencion.Id
-				WHERE arearemite.nombre LIKE '%".$q."%' ORDER BY fechaRecibe DESC";
+				WHERE arearemite.nombre = '".$q."' ORDER BY fechaRecibe DESC";
 	 	 	break;
 
 	 	 	case '3':
@@ -36,14 +36,14 @@
 				INNER JOIN arearemite ON turno.idAreaRemite = arearemite.Id
 				INNER JOIN responsableatencion ON turno.idResponsableAtencion = responsableatencion.Id
 				INNER JOIN areabeneficiada ON turno.idAreaBeneficia = areabeneficiada.Id
-				WHERE areabeneficiada.nombre LIKE '%".$q."%' ORDER BY fechaRecibe DESC";
+				WHERE areabeneficiada.nombre = '".$q."' ORDER BY fechaRecibe DESC";
 	 	 	break;
 	 	 	
 	 	 	case '4':
 	 	 		$query  = "SELECT turno.id, fechaRecibe, fechaDocumento, arearemite.nombre AS nomrem, responsableatencion.nombre AS nomat FROM turno
 				INNER JOIN arearemite ON turno.idAreaRemite = arearemite.Id
 				INNER JOIN responsableatencion ON turno.idResponsableAtencion = responsableatencion.Id
-				WHERE responsableatencion.nombre LIKE '%".$q."%' ORDER BY fechaRecibe DESC";
+				WHERE responsableatencion.nombre = '".$q."' ORDER BY fechaRecibe DESC";
 	 	 	break;
 
 	 	 	case '5':
