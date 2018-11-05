@@ -32,7 +32,6 @@ function llenarF(id)
             $("#fechaRecibe").val(datos.fechaRecibe);
             $("#fechaDocumento").val(datos.fechaDocumento);
             $("#instrucciones").val(datos.instruccionesAten);
-            $("#archivo").val(datos.documentoRuta);
 
             //Llenar los select de tipos de turnos
             $("#select-Turno").val(datos.tipoTurno).attr("selected",true);
@@ -45,6 +44,9 @@ function llenarF(id)
             
             //Llenar los select de departamento responsable de atencion
             $("#select-Atencion").val(datos.responsableAtencion).attr("selected",true);
+            
+
+            $("#archivo").val(datos.ruta);
 
             /*
             //ARCHIVO: EmpresaContrato.pdf

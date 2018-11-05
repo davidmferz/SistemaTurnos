@@ -7,6 +7,7 @@
 
 	$nombre=$_POST['nom1'];
 	$tipo=$_POST['tipo1'];
+	$pass=$_POST['pass1'];
 	$jsondata=array();
 
 	switch ($tipo) {
@@ -20,7 +21,7 @@
         $resultado=mysqli_query($con,"INSERT INTO areabeneficiada(nombre) VALUES('$nombre')");
         break;
     case "vtnAtencion":
-        $resultado=mysqli_query($con,"INSERT INTO 	responsableatencion(nombre) VALUES('$nombre')");
+        $resultado=mysqli_query($con,"INSERT INTO 	responsableatencion(nombre, contrasenia) VALUES('$nombre', '$pass')");
         break;
 }
 

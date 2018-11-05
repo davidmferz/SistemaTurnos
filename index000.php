@@ -233,6 +233,15 @@ var vtn = null;
   {
     var aux2 = "text-";
     aux2 += vtn;
+    if (vtn == "vtnAtencion")
+    {
+      var aux3 = "pass-";
+      aux3 += vtn;
+      var aux4 = "conpass-";
+      aux4 += vtn;
+      document.getElementById(aux3).value=null;
+      document.getElementById(aux4).value=null;
+    }
     document.getElementById(aux2).value=null;
   }
 
@@ -241,9 +250,19 @@ var vtn = null;
     eliminarTurno(tabla2, vtn);
   }
 
-  function agregar(){
-    console.log(tabla2+vtn);
-    nuevoTurno(tabla2,vtn);
+  function agregar()
+  {
+    var pass = "pass-vtnAtencion";
+    var confi = "conpass-vtnAtencion";
+    if (vtn == "vtnAtencion")
+    {
+      nuevoAtencion(tabla2,vtn,pass,confi);
+    }
+    else
+    {
+      console.log(tabla2+vtn);
+      nuevoTurno(tabla2,vtn);
+    }
   }
 
   function consultaAgregar(tabla, vtnm)

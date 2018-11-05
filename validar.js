@@ -50,8 +50,8 @@ function validar_nombre(aux, aux2, tabla2, vtn)
 			        .done(function(datos) {
 			        	alert("Se edito con exito");
 			           console.log("exitoX: "+datos.resultado);
-			           consulta_Select(tabla2, vtn);
 			           limpia();
+			           //consulta_Select(tabla2, vtn);			           
 			        })
 			        .fail(function(datos) {
 			          console.log("error en "+datos.resultado);
