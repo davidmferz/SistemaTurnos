@@ -6,7 +6,7 @@ const Ventana = props =>{
 		    <div className="modal-content">
 		      <div className="modal-header">
 		        <h5 className="modal-title">{props.titulo}</h5>
-		        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+		        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={limpia}>
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
@@ -15,13 +15,20 @@ const Ventana = props =>{
 		        <form id={"form-"+props.id}>
 					<div className="form-group">
 						<input type="text" className="form-control" id={"text-"+props.id} name="nombre" placeholder="Ingrese Nombre"/>
-						
 					</div>
+					{props.id == "vtnAtencion"  &&
+					<div className="form-group">
+						<input type="password" className="form-control" id={"pass-"+props.id} name="contraseña" placeholder="Ingrese Contraseña"/>
+					</div>}
+					{props.id == "vtnAtencion"  &&
+					<div className="form-group">
+						<input type="password" className="form-control" id={"conpass-"+props.id} name="concontraseña" placeholder="Confirme Contraseña"/>
+					</div>}
 				</form>
 		      </div>
 		      <div className="modal-footer">
 		        <button type="button" className="btn btn-primary" onClick={agregar}>Guardar</button>
-		        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={limpia}>Close</button>
 		      </div>
 		    </div>
 		  </div>

@@ -66,12 +66,11 @@
 		}
 	}
 
-	/*
 	//REMPLAZAMOS EL " / " POR  " - " 
 	//EJEMPLO UAEM/SAD/001/2018 = UAEM-SAD-001-2018 
 	//YA QUE LAS CARPETAS SE CREARON CON EL - YA QUE EL / NO SE PUEDE CREAR.
 	$posicion=0;
-	$cadena=$jsondata['NoContrato'];
+	$cadena=$jsondata['documentoRuta'];
 
 	if($cadena != "")
 	{
@@ -83,29 +82,28 @@
 			}
 		}while($posicion != false); 
 
-		//RUTA DEL ARCHIVO EJEMPLO $ruta= Archivos/UAEM-SAD-001-2018/
-		$ruta = "Archivos/".$cadena."/";
+		//RUTA DEL ARCHIVO EJEMPLO $ruta= archivosTurnos/UAEM-SAD-001-2018/
+		$ruta = "archivosTurnos/".$cadena."/";
 
 
-		//ARCHIVO: EmpresaContrato.pdf
-		//LEEMOS EL ARCHIVO PDF DEL CONTRATO DE LA EMPRESA $archivo=Archivos/UAEM-SAD-001-2018/EmpresaContrato.pdf
-		$archivo = $ruta."EmpresaContrato.pdf";
+		//ARCHIVO: Documento.pdf
+		//LEEMOS EL ARCHIVO PDF DEL DOCUMENTO $archivo=archivosTurnos/UAEM-SAD-001-2018/Documento.pdf
+		$archivo = $ruta."Documento.pdf";
 
-		//VERIFICAMOS QUE EXISTA EmpresaContrato.pdf
+		//VERIFICAMOS QUE EXISTA Documento.pdf
 		if(file_exists($archivo))
 		{
-			$jsondata['EmpresaContrato']=$archivo;
+			$jsondata['ruta']=$archivo;
 		}
 		else
 		{
-			$jsondata['EmpresaContrato']="NO SE ENCONTRO ARCHIVO";
+			$jsondata['ruta']="NO SE ENCONTRO ARCHIVO";
 		}
 	}
 	else
 	{
-		$jsondata['EmpresaContrato']="NO SE ENCONTRO ARCHIVO";
+		$jsondata['ruta']="NO SE ENCONTRO ARCHIVO";
 	}
-	*/
 
     echo json_encode($jsondata);
 	exit();	

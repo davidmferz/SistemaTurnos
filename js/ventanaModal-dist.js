@@ -20,7 +20,7 @@ var Ventana = function Ventana(props) {
 					),
 					React.createElement(
 						"button",
-						{ type: "button", className: "close", "data-dismiss": "modal", "aria-label": "Close" },
+						{ type: "button", className: "close", "data-dismiss": "modal", "aria-label": "Close", onClick: limpia },
 						React.createElement(
 							"span",
 							{ "aria-hidden": "true" },
@@ -39,6 +39,16 @@ var Ventana = function Ventana(props) {
 							"div",
 							{ className: "form-group" },
 							React.createElement("input", { type: "text", className: "form-control", id: "text-" + props.id, name: "nombre", placeholder: "Ingrese Nombre" })
+						),
+						props.id == "vtnAtencion" && React.createElement(
+							"div",
+							{ className: "form-group" },
+							React.createElement("input", { type: "password", className: "form-control", id: "pass-" + props.id, name: "contrase\xF1a", placeholder: "Ingrese Contrase\xF1a" })
+						),
+						props.id == "vtnAtencion" && React.createElement(
+							"div",
+							{ className: "form-group" },
+							React.createElement("input", { type: "password", className: "form-control", id: "conpass-" + props.id, name: "concontrase\xF1a", placeholder: "Confirme Contrase\xF1a" })
 						)
 					)
 				),
@@ -52,7 +62,7 @@ var Ventana = function Ventana(props) {
 					),
 					React.createElement(
 						"button",
-						{ type: "button", className: "btn btn-secondary", "data-dismiss": "modal" },
+						{ type: "button", className: "btn btn-secondary", "data-dismiss": "modal", onClick: limpia },
 						"Close"
 					)
 				)

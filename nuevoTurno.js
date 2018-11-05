@@ -32,7 +32,6 @@ function nuevoTurno(tabla, vtn)
 				if(datos.resultado)
 				{
 					console.log("Se repite el nombre");
-					
 					alert("El nombre se repite");
 				}
 				else
@@ -60,7 +59,83 @@ function nuevoTurno(tabla, vtn)
 				          console.log("complete");
 				      });
 				}
-				
+			})
+			.fail(function(XMLHttpRequest) {
+				console.log("error: "+XMLHttpRequest.responseText);
+			})
+			.always(function() {
+			});
+	//aqui termina else	
+	}
+}
+
+function nuevoAtencion(tabla, vtn, pass, confi)
+{
+	var aux="text-";
+	aux += vtn;
+	var nom = document.getElementById(aux).value;
+	var con = document.getElementById(pass).value;
+	var con1 = document.getElementById(confi).value;
+	console.log(tabla);
+	console.log(aux);
+	console.log("el tipo de venatana es: "+vtn);
+	console.log("el nombre que se va a guardar es "+nom);
+	
+	if(nom.length <= 1)
+	{
+		alert("El campo no debe estar vacío");
+	}
+	else
+	{
+		$.ajax({
+		url: 'validar_nombre.php',
+		type: 'POST',
+		dataType: 'JSON',
+		data: {nombre1: nom, tabla1: tabla},
+		beforeSend: function(){
+			console.log("si entre");
+		}
+		})
+
+		.done(function(datos) {
+				if(datos.resultado)
+				{
+					console.log("Se repite el nombre");
+					alert("El nombre se repite");
+				}
+				else
+				{
+					console.log("No se repite el nombre");
+
+					if (con === con1)
+					{
+						$.ajax({
+					        url: 'enviarTurno.php',
+							type: 'POST',
+							dataType: 'json',
+							data: {nom1: nom, tipo1: vtn, pass1: con},
+							beforeSend: function(){
+					     	console.log("Se está procesando la informacion ");
+					      },
+						})
+				        .done(function(datos) {
+				           console.log("exitoX: "+datos.resultado);
+				           alert("Se agregó correctamente");
+				           limpia();
+				        })
+				        .fail(function(datos) {
+				          console.log("error en "+datos.resultado);
+				        })
+				        .always(function() {
+				          console.log("complete");
+					    });
+					}
+					else
+					{
+						console.log("La contraseña es diferente");
+						alert("La contraseña no coincide");
+					}
+				}
 			})
 			.fail(function(XMLHttpRequest) {
 				console.log("error: "+XMLHttpRequest.responseText);
@@ -70,7 +145,4 @@ function nuevoTurno(tabla, vtn)
 			});
 	//aqui termina else	
 	}
-
-	
-
 }
