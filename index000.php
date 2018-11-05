@@ -42,6 +42,7 @@
     
     <!--SE AGREGA la funcion consulta_Select-->
     <script src="js/consulta_Select.js"></script>
+    <script src="crearArchivo.js"></script>
     
 </head>
 <body>
@@ -83,6 +84,8 @@
     	</div>
       <input type="text" id="idx" name="idx" style="display: none">
     </div>
+
+    <div><button type="button" name="boton" id="boton" onclick="crearArchivo()">click</button></div>
 
      <!--
     VENTANA MODAL para agregar: 

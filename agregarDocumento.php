@@ -3,18 +3,17 @@
 
 	//$druta=$_POST['druta1']
 
-	$jsondata=array();
+	//$jsondata=array();
 
-	$carpeta="archivosTurnos/";
-	//$nombre=$_FILES['archivo']['name'];
+	/*$carpeta="archivosTurnos/";
+	
 	opendir($carpeta);
 	$destino=$carpeta.$_FILES['archivo']['name'];
 	copy($_FILES['archivo']['tmp_name'],$destino);
-	//$src=$carpeta.$nombre;
-	mysqli_query($con,"INSERT INTO turno(documentoRuta) VALUES ('$destino')");
+	*/
+	mysqli_query($con,"INSERT INTO turno(documentoRuta) VALUES ('ruta')");
 
-	$jsondata["destino"]="no pasó";
-	echo json_encode($jsondata);
+	
 	/*$archi=$_FILES["archivo"]["name"];
 	$ruta=$_FILES["archivo"]["tmp_name"];
 	$destino="archivosTurnos/".$archi;

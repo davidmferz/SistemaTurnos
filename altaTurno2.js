@@ -62,7 +62,7 @@ function altaTurno2()
             console.log("se insertó");
             $.ajax(
             {
-                url: 'agregarDocumento.php',
+                url: 'insertadoc.php',
                 type: 'POST',
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 data: formData,
@@ -75,10 +75,10 @@ function altaTurno2()
                     console.log("trabajando en el documento");
                 },                                
             })
-            .done(function(trae)
+            .done(function()
             {
                 console.log("a webito");
-                console.log(trae.destino);
+                
             })
             .fail(function()
             {
