@@ -232,6 +232,25 @@ var vtn = null;
     validar_nombre(aux, aux2, tabla2, vtn);
   }
 
+  function cambio()
+  {
+    var check=document.getElementById("check-vtnAtencionEditar").value;
+    var aux=document.getElementById("camcon");
+    var aux1=document.getElementById("camcon1");
+    if (check == "on")
+    {
+      aux.innerHTML='<input type="password" class="form-control" id="pass-vtnAtencionEditar" name="contraseña" placeholder="Ingrese Nueva Contraseña"/>';
+      aux1.innerHTML ='<input type="password" class="form-control" id="conpass-vtnAtencionEditar" name="concontraseña" placeholder="Confirme Nueva Contraseña"/>';
+      document.getElementById("check-vtnAtencionEditar").value = "off";
+    }
+    else
+    {
+      aux.innerHTML=null;
+      aux1.innerHTML=null;
+      document.getElementById("check-vtnAtencionEditar").value = "on";
+    }
+  }
+
   function limpia()
   {
     var aux2 = "text-";

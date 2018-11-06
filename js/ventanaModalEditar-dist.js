@@ -47,23 +47,38 @@ var Ventana = function Ventana(props) {
 									"Seleccione una opcion"
 								)
 							)
+						),
+						React.createElement(
+							"div",
+							{ className: "form-group" },
+							React.createElement("input", { type: "text", className: "form-control", name: "nombre2", id: "text-" + props.id, placeholder: "Nombre" })
+						),
+						props.id == "vtnAtencionEditar" && React.createElement(
+							"div",
+							{ className: "form-group" },
+							React.createElement("input", { type: "checkbox", id: "check-" + props.id, defaultChecked: false, onChange: cambio }),
+							React.createElement(
+								"label",
+								null,
+								" \xBFDesea cambiar la contrase\xF1a?"
+							)
+						),
+						props.id == "vtnAtencionEditar" && React.createElement("div", { className: "form-group", id: "camcon" }),
+						props.id == "vtnAtencionEditar" && React.createElement("div", { className: "form-group", id: "camcon1" })
+					),
+					React.createElement(
+						"div",
+						{ className: "modal-footer" },
+						React.createElement(
+							"button",
+							{ type: "button", id: "editar", className: "btn btn-primary", onClick: actualiza },
+							"Editar"
+						),
+						React.createElement(
+							"button",
+							{ type: "button", className: "btn btn-secondary", "data-dismiss": "modal", onClick: limpia },
+							"Close"
 						)
-					),
-					React.createElement("br", null),
-					React.createElement("input", { type: "text", className: "form-control", name: "nombre2", id: "text-" + props.id })
-				),
-				React.createElement(
-					"div",
-					{ className: "modal-footer" },
-					React.createElement(
-						"button",
-						{ type: "button", id: "editar", className: "btn btn-primary", onClick: actualiza },
-						"Editar"
-					),
-					React.createElement(
-						"button",
-						{ type: "button", className: "btn btn-secondary", "data-dismiss": "modal", onClick: limpia },
-						"Close"
 					)
 				)
 			)

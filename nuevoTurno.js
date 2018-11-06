@@ -83,66 +83,79 @@ function nuevoAtencion(tabla, vtn, pass, confi)
 	
 	if(nom.length <= 1)
 	{
-		alert("El campo no debe estar vacío");
+		alert("El campo nombre no debe estar vacío");
 	}
 	else
 	{
-		$.ajax({
-		url: 'validar_nombre.php',
-		type: 'POST',
-		dataType: 'JSON',
-		data: {nombre1: nom, tabla1: tabla},
-		beforeSend: function(){
-			console.log("si entre");
+		if (con.length <= 1)
+		{
+			alert("El campo contraseña no debe estar vacío");
 		}
-		})
-
-		.done(function(datos) {
-				if(datos.resultado)
-				{
-					console.log("Se repite el nombre");
-					alert("El nombre se repite");
+		else
+		{
+			if (con1.length <= 1)
+			{
+				alert("Confirme la contraseña");
+			}
+			else
+			{
+				$.ajax({
+				url: 'validar_nombre.php',
+				type: 'POST',
+				dataType: 'JSON',
+				data: {nombre1: nom, tabla1: tabla},
+				beforeSend: function(){
+					console.log("si entre");
 				}
-				else
-				{
-					console.log("No se repite el nombre");
+				})
 
-					if (con === con1)
-					{
-						$.ajax({
-					        url: 'enviarTurno.php',
-							type: 'POST',
-							dataType: 'json',
-							data: {nom1: nom, tipo1: vtn, pass1: con},
-							beforeSend: function(){
-					     	console.log("Se está procesando la informacion ");
-					      },
-						})
-				        .done(function(datos) {
-				           console.log("exitoX: "+datos.resultado);
-				           alert("Se agregó correctamente");
-				           limpia();
-				        })
-				        .fail(function(datos) {
-				          console.log("error en "+datos.resultado);
-				        })
-				        .always(function() {
-				          console.log("complete");
-					    });
-					}
-					else
-					{
-						console.log("La contraseña es diferente");
-						alert("La contraseña no coincide");
-					}
-				}
-			})
-			.fail(function(XMLHttpRequest) {
-				console.log("error: "+XMLHttpRequest.responseText);
-			})
-			.always(function() {
-				
-			});
-	//aqui termina else	
+				.done(function(datos) {
+						if(datos.resultado)
+						{
+							console.log("Se repite el nombre");
+							alert("El nombre se repite");
+						}
+						else
+						{
+							console.log("No se repite el nombre");
+
+							if (con === con1)
+							{
+								$.ajax({
+							        url: 'enviarTurno.php',
+									type: 'POST',
+									dataType: 'json',
+									data: {nom1: nom, tipo1: vtn, pass1: con},
+									beforeSend: function(){
+							     	console.log("Se está procesando la informacion ");
+							      },
+								})
+						        .done(function(datos) {
+						           console.log("exitoX: "+datos.resultado);
+						           alert("Se agregó correctamente");
+						           limpia();
+						        })
+						        .fail(function(datos) {
+						          console.log("error en "+datos.resultado);
+						        })
+						        .always(function() {
+						          console.log("complete");
+							    });
+							}
+							else
+							{
+								console.log("La contraseña es diferente");
+								alert("La contraseña no coincide");
+							}
+						}
+					})
+					.fail(function(XMLHttpRequest) {
+						console.log("error: "+XMLHttpRequest.responseText);
+					})
+					.always(function() {
+						
+					});
+			}
+		}
 	}
 }
