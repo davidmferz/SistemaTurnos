@@ -37,12 +37,12 @@ function nuevoTurno(tabla, vtn)
 				else
 				{
 					console.log("No se repite el nombre");
-						
+					var pass="";	
 					$.ajax({
 				        url: 'enviarTurno.php',
 						type: 'POST',
 						dataType: 'json',
-						data: {nom1: nom, tipo1: tipo},
+						data: {nom1: nom, tipo1: tipo, pass1: pass},
 						beforeSend: function(){
 				     	console.log("Se está procesando la informacion ");
 				      },
