@@ -202,6 +202,7 @@
 
 var tabla2 = null;
 var vtn = null;
+var check = null;
   
   function consulta(tabla,select)
   {
@@ -230,14 +231,24 @@ var vtn = null;
     aux2 += vtn;
     var valor = document.getElementById(aux).value;
     var nuevo = document.getElementById(aux2).value;
-    validar_nombre(aux, aux2, tabla2, vtn);
+    check = document.getElementById("check-vtnAtencionEditar").value;
+    if (vtn == "vtnAtencionEditar" && check == "off")
+    {
+      var pass = document.getElementById("pass-vtnAtencionEditar").value;
+      var con = document.getElementById("conpass-vtnAtencionEditar").value;
+      validar_atencion(aux, aux2, tabla2, vtn, pass, con);
+    }
+    else
+    {
+      validar_nombre(aux, aux2, tabla2, vtn);
+    }
   }
 
   function cambio()
   {
-    var check=document.getElementById("check-vtnAtencionEditar").value;
-    var aux=document.getElementById("camcon");
-    var aux1=document.getElementById("camcon1");
+    check = document.getElementById("check-vtnAtencionEditar").value;
+    var aux = document.getElementById("camcon");
+    var aux1 = document.getElementById("camcon1");
     if (check == "on")
     {
       aux.innerHTML='<input type="password" class="form-control" id="pass-vtnAtencionEditar" name="contraseña" placeholder="Ingrese Nueva Contraseña"/>';
@@ -256,7 +267,9 @@ var vtn = null;
   {
     var aux2 = "text-";
     aux2 += vtn;
-    if (vtn == "vtnAtencion")
+    document.getElementById(aux2).value=null;
+    check = document.getElementById("check-vtnAtencionEditar").value;
+    if (vtn == "vtnAtencion" || (vtn == "vtnAtencionEditar" && check == "off"))
     {
       var aux3 = "pass-";
       aux3 += vtn;
@@ -265,7 +278,6 @@ var vtn = null;
       document.getElementById(aux3).value=null;
       document.getElementById(aux4).value=null;
     }
-    document.getElementById(aux2).value=null;
   }
 
   function elimina()

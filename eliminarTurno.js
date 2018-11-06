@@ -34,7 +34,7 @@ function eliminarTurno(tabla2, vtn)
 		 console.log("exitoX: "+datos.resultado);
 		 //console.log("resultado: "+datos.resultadoX);
         //document.getElementById("form-vtnTurno").reset();
-        consulta_Select(tabla2, vtn);
+        //consulta_Select(tabla2, vtn);
 
         alert("Se eliminó correctamente");
 	})
