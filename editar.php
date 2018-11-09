@@ -9,7 +9,14 @@
 
 	if ($tabla == "responsableatencion" && $n == 1)
 	{
-		$resultado=mysqli_query($con,"UPDATE $tabla SET nombre='$nuevo', contrasenia='$pass' WHERE nombre='$valor'");
+		if ($nuevo === $valor)
+		{
+			$resultado=mysqli_query($con,"UPDATE $tabla SET contrasenia='$pass' WHERE nombre='$valor'");
+		}
+		else
+		{
+			$resultado=mysqli_query($con,"UPDATE $tabla SET nombre='$nuevo', contrasenia='$pass' WHERE nombre='$valor'");
+		}
 	}
 	else
 	{
