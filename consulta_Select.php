@@ -7,7 +7,7 @@
 		//PARA QUE RECONOCER LOS ACENTOS
 		$acentos = $con->query("SET NAMES 'utf8'");
 		
-		$resultado=mysqli_query($con,"SELECT ID, Nombre FROM $tabla WHERE ID>1 ORDER BY Nombre");
+		$resultado=mysqli_query($con,"SELECT ID, Nombre FROM $tabla WHERE ID>=1 ORDER BY Nombre");
 
 		if(mysqli_num_rows($resultado)>0)
 		{

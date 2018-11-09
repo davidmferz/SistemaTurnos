@@ -7,7 +7,7 @@
 	}
     else
     {
-      $bienvenido=$_SESSION["nombre"];  
+      $bienvenido=$_SESSION["nombre"];
     }
 ?>
 

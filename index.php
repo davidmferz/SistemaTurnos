@@ -6,12 +6,7 @@
   }
     else
     {
-        switch ($_SESSION["user"]) 
-        {
-            case 0://Administrador
-                header('Location: index000.php');   
-            break;
-        }
+      header("Location: ".$_SESSION['pagina']);
     }
   
 ?>
@@ -32,6 +27,10 @@
 
   <!--CSS-->
   <script src="css/estilos.css"></script>
+
+  <!--SE AGREGA la funcion consulta_Select-->
+  <script src="js/consulta_Select.js"></script>
+
 </head>
 <body>
   
@@ -39,8 +38,8 @@
     <div class="col-md-6">
       <div class="centrar" style="margin: auto;">
           <div style="margin-top: 28px;">
-              <div class="panel-heading col-md-8" style="margin-bottom: 35px; padding: 4px;" >              
-                              </div>
+              <div class="panel-heading col-md-8" style="margin-bottom: 35px; padding: 4px;">
+              </div>
           </div>
           <div style="margin-right: 28px;">
             <!--TITULO DE SIEObras-->
@@ -54,13 +53,13 @@
             </div>
 
             <!--LINEA DE COLORES-->
-                    <div class="row">
-                        <div class="col-md-4" style="background-color: #2C5234; border-color: #2C5234; margin-bottom: 35px; padding: 4px;" >
-                        </div>
-                        
-                        <div class="col-md-8" style="background-color: #9C8412;border-color: #9C8412; margin-bottom: 35px; padding: 4px;" >              
-                        </div>  
-                    </div>                                     
+            <div class="row">
+              <div class="col-md-4" style="background-color: #2C5234; border-color: #2C5234; margin-bottom: 35px; padding: 4px;" >
+              </div>
+              
+              <div class="col-md-8" style="background-color: #9C8412;border-color: #9C8412;margin-bottom: 35px; padding: 4px;">
+              </div>
+            </div>                                     
           </div>
       </div>
     </div>
@@ -71,10 +70,10 @@
         </div>
         <form id="miFormAltas" class="m-4">
           <div class="espacio">
-            <select class="form-control" name="user">
-            <option value="0">Administrador</option>
+            <select class="form-control" name="user" id="select-usuarios">
+              <option value="0">Administrador</option>
             
-          </select>
+            </select>
           </div>
           <div class="espacio">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -106,43 +105,45 @@
 
   <!--VALIDAR EL LOGIN--> 
   <script>
-        $("#miFormAltas").on("submit", function(e)//FUNCION AJAX PARA DAR DE ALTA UNA NUEVA OBRA
+    
+    $(document).ready(function()
+    {
+      consulta_Select("responsableatencion", "select-usuarios");
+    });
+
+    $("#miFormAltas").on("submit", function(e)//FUNCION AJAX
+    {
+      e.preventDefault();//evita que se recarge la pagina
+      var formData = new FormData(document.getElementById("miFormAltas"));
+      $.ajax({
+        url:"validar_login.php",
+        type:"POST",
+        dataType:"html",
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        data:formData,
+        cache:false,
+        contentType: false,
+        encode:true,
+        processData: false,
+        beforeSend: function()
         {
-             e.preventDefault();//evita que se recarge la pagina
-             var formData = new FormData(document.getElementById("miFormAltas"));
-           
-            $.ajax({
-                    url:"validar_login.php",
-                    type:"POST",
-                    dataType:"html",
-                    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-                    data:formData,
-                    cache:false,
-                    contentType: false,
-                    encode:true,
-                    processData: false,
-                    beforeSend: function()
-                    {
-                        
-                    },
-                    success: function(datos)
-                    {
-                        if(datos=="1")
-                        {
-                          location.reload();
-                        }
-                        else
-                        {
-                          alert("Usuario y/o Contraseña incorrectos, intente de nuevo");
-                        }                           
-                    },
-                    error: function(XMLHttpRequest,data)
-                    {
-                      
-                    } 
-                });
-             
-          });
-    </script>
+        },
+        success: function(datos)
+        {
+          if(datos=="1")
+          {
+            location.reload();
+          }
+          else
+          {
+            alert("Usuario y/o Contraseña incorrectos, intente de nuevo");
+          }
+        },
+        error: function(XMLHttpRequest,data)
+        {
+        } 
+      });
+    });
+  </script>
 </body>
 </html>

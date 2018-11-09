@@ -7,12 +7,7 @@
 	}
     else
     {
-      switch ($_SESSION["user"]) 
-      {
-        case 0://Direccion de Obra Universitara
-          $bienvenido="Administrador";  
-        break;
-      }
+      $bienvenido=$_SESSION["nombre"];  
     }
 ?>
 

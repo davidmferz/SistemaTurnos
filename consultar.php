@@ -75,7 +75,7 @@
     
         <div class="row">
             <div class="col-md-12" style="margin: 0px 35px;">
-                <a href="index000.php"><img src="img/regresar.png" alt="imagen">Regresar</a>
+                <a href="index001.php"><img src="img/regresar.png" alt="imagen">Regresar</a>
             </div>
         </div>
         
