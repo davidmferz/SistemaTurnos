@@ -19,7 +19,7 @@
 
 	//}
 	
-	$file=fopen("indexprb".$ni.".php","a+");
+	$file=fopen("index".$ni.".php","a+");
 	fwrite($file,$contenido);
 	fclose($file);
 
