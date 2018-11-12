@@ -78,6 +78,7 @@ function altaTurno2()
             .done(function()
             {
                 console.log("a webito");
+                alert("Se Agregó Correctamente");
                 
             })
             .fail(function()
@@ -106,4 +107,5 @@ function altaTurno2()
     {
         console.log("completado1");
     });
+    document.getElementById("formTurno").reset();
 }
