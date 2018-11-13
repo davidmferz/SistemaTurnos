@@ -6,6 +6,7 @@ const FormularioTurnos = props =>{
             Agregar un nuevo Turno
           </div>
           
+          
           <div className="card-body">
                 <form id="formTurno" encType="multipart/form-data">
                     <br/>

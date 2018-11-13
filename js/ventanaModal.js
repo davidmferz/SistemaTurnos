@@ -45,7 +45,7 @@ const Ventana = props =>{
 
 ReactDOM.render(
 	<div>
-		<Ventana id="vtnTurno" titulo="Tipo de Recurso"/>
+		<Ventana id="vtnTurno" titulo="Tipo de Turno"/>
 		<Ventana id="vtnRemite" titulo="Area que Remite"/>
 		<Ventana id="vtnBeneficia" titulo="Area que Beneficia"/>
 		<Ventana id="vtnAtencion" titulo="Departamento Responsable de Atención"/>

@@ -1,21 +1,14 @@
 <?php
-	//Buscar turnos
-	session_start();
-	if(!$_SESSION)
-	{
-		header('Location: index.php');
-	}
+    //PAGINA DEL ADMINISTRADOR
+    session_start();
+    if(!$_SESSION)
+    {
+        header('Location: index.php');
+    }
     else
     {
-        switch ($_SESSION["user"]) 
-        {
-            case 0://Direccion de Obra Universitara
-                $bienvenido="Administrador";  
-            break;
-
-        }
+      $bienvenido=$_SESSION["nombre"];  
     }
-    //modificacion
 ?>
 
 <!DOCTYPE html>

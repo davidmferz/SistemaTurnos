@@ -81,7 +81,7 @@ var Ventana = function Ventana(props) {
 ReactDOM.render(React.createElement(
 	"div",
 	null,
-	React.createElement(Ventana, { id: "vtnTurno", titulo: "Tipo de Recurso" }),
+	React.createElement(Ventana, { id: "vtnTurno", titulo: "Tipo de Turno" }),
 	React.createElement(Ventana, { id: "vtnRemite", titulo: "Area que Remite" }),
 	React.createElement(Ventana, { id: "vtnBeneficia", titulo: "Area que Beneficia" }),
 	React.createElement(Ventana, { id: "vtnAtencion", titulo: "Departamento Responsable de Atenci\xF3n" })

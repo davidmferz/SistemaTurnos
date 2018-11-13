@@ -1,21 +1,14 @@
 <?php
-	//Agregar un nuevo turno
-	session_start();
-	if(!$_SESSION)
-	{
-		header('Location: index.php');
-	}
+    //PAGINA DEL ADMINISTRADOR
+    session_start();
+    if(!$_SESSION)
+    {
+        header('Location: index.php');
+    }
     else
     {
-        switch ($_SESSION["user"]) 
-        {
-            case 0://Direccion de Obra Universitara
-                $bienvenido="Administrador";  
-            break;
-
-        }
+      $bienvenido=$_SESSION["nombre"];  
     }
-    //modificacion
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +67,11 @@
         </div>
     </div>
     
+    <div class="row">
+            <div class="col-md-12" style="margin: 0px 35px;">
+                <a href="index001.php"><img src="img/regresar.png" alt="imagen">Regresar</a>
+            </div>
+        </div>
 
     <div id="formularioTurno">
         
